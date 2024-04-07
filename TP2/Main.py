@@ -17,15 +17,15 @@ def countriesList():
 
 # Verificar si el código de país ingresado es válido
 def selectedCountry(country):
-    selectCountry= country
+    #selectCountry= country
     #return void
-    if selectedCountry in countries:
+    if country in countries:
 # Hacer la solicitud para el país seleccionado
      url = f'https://api.worldbank.org/v2/en/country/{selectedCountry}/indicator/SI.POV.GINI?format=json&date=2011:2020'
      response = requests.get(url)
      return response
     else:
-     return void
+     return 0
 
 #     if response.status_code == 200:
 #         data = response.json()

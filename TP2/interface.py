@@ -11,7 +11,13 @@ root.geometry("500x500")
 
 def searchCountry():
     #Main.selectedCountry(entry1.get())
-    selectedCountry(entry1.get())
+    if selectedCountry(entry1.get()) != 0:
+        #Acción de valor no válido (mensaje de ERROR)
+        label1.configure(text= "Ingrese el año que desea consultar")
+    else:
+        label2.configure(text= selectedCountry(entry1.get()))
+
+
 
 frame= customtkinter.CTkFrame(master= root)
 frame.pack(pady=20, padx=60, fill="both", expand= True)
@@ -27,9 +33,6 @@ label2.pack(pady= 0, padx= 10)
 
 entry1= customtkinter.CTkEntry(master= frame, placeholder_text= "País")
 entry1.pack(pady= 12, padx= 10)
-
-# entry2= customtkinter.CTkEntry(master= frame, placeholder_text= "Password", show= "*")
-# entry2.pack(pady= 12, padx= 10)
 
 button= customtkinter.CTkButton(master= frame, text= "Buscar", command= searchCountry)
 button.pack(pady= 12, padx= 10)
