@@ -12,10 +12,11 @@ root.geometry("500x500")
 def searchCountry():
     #Main.selectedCountry(entry1.get())
     if selectedCountry(entry1.get()) != 0:
-        #Acción de valor no válido (mensaje de ERROR)
         label1.configure(text= "Ingrese el año que desea consultar")
-    else:
         label2.configure(text= selectedCountry(entry1.get()))
+    else:
+        #Acción de valor no válido (mensaje de ERROR)
+        label2.configure(text= "0")
 
 
 

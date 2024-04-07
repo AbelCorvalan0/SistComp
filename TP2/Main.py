@@ -21,7 +21,7 @@ def selectedCountry(country):
     #return void
     if country in countries:
 # Hacer la solicitud para el país seleccionado
-     url = f'https://api.worldbank.org/v2/en/country/{selectedCountry}/indicator/SI.POV.GINI?format=json&date=2011:2020'
+     url = f'https://api.worldbank.org/v2/en/country/{country}/indicator/SI.POV.GINI?format=json&date=2011:2020'
      response = requests.get(url)
      return response
     else:
