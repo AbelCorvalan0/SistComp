@@ -23,7 +23,8 @@ def selectedCountry(country):
 # Hacer la solicitud para el país seleccionado
      url = f'https://api.worldbank.org/v2/en/country/{country}/indicator/SI.POV.GINI?format=json&date=2011:2020'
      response = requests.get(url)
-     return response
+     if response.status_code == 200:
+        return response.json()
     else:
      return 0
 

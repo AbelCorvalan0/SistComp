@@ -16,7 +16,8 @@ def searchCountry():
         label2.configure(text= selectedCountry(entry1.get()))
     else:
         #Acción de valor no válido (mensaje de ERROR)
-        label2.configure(text= "0")
+        label2.configure(text= "ERROR ERROR ERROR ERROR")
+
 
 
 
