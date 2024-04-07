@@ -1,4 +1,3 @@
-from numpy import void
 import requests
 import ctypes
 
@@ -7,25 +6,20 @@ countries = ['ARG', 'BRA', 'CHL', 'COL', 'MEX', 'PER', 'VEN']
 
 # Mostrar lista de países al usuario
 def countriesList():
+    #print("Lista de países latinoamericanos:")
+    #for country in countries:
+        #print(country)
+    #    listCountries= country
     return countries
 
 # Solicitar al usuario que ingrese el código de país
-#def selectedCountry(country):
-    #selecCountry= country
-    #return 0
 #selected_country = input("Ingrese el código del país que desea consultar: ")
 
 # Verificar si el código de país ingresado es válido
-def selectedCountry(country):
-    selectCountry= country
-    #return void
-    if selectedCountry in countries:
-# Hacer la solicitud para el país seleccionado
-     url = f'https://api.worldbank.org/v2/en/country/{selectedCountry}/indicator/SI.POV.GINI?format=json&date=2011:2020'
-     response = requests.get(url)
-     return response
-    else:
-     return void
+# if selected_country in countries:
+#     # Hacer la solicitud para el país seleccionado
+#     url = f'https://api.worldbank.org/v2/en/country/{selected_country}/indicator/SI.POV.GINI?format=json&date=2011:2020'
+#     response = requests.get(url)
 
 #     if response.status_code == 200:
 #         data = response.json()
