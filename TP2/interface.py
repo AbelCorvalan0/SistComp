@@ -21,7 +21,7 @@ def searchDate():
     label1.configure(text= "Ingrese el año que desea consultar")
     label2.configure(text= selectedCountry(entry1.get()))
     entry1.delete(0, customtkinter.END)
-    entry1.configure(placeholder_text= "Año")
+    #entry1.configure(placeholder_text= "Año")
 
 
 frame= customtkinter.CTkFrame(master= root)
