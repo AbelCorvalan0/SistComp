@@ -20,7 +20,6 @@ if selected_country in countries:
 
     if response.status_code == 200:
         data = response.json()
-        
         gini_data = {entry['date']: entry['value'] for entry in data[1] if entry['value'] is not None}
 
         print(f'Datos para {selected_country}:')
@@ -42,7 +41,7 @@ else:
     print("Código de país no válido.")
 
 
-#Cargo la biblioteca compartida
+#Cargo la biblioteca compartida (Programa en lenguaje C)
 lib = ctypes.CDLL('./main.so')
 
 # Defino el tipo de argumento y el tipo de retorno de la función

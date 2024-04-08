@@ -6,19 +6,22 @@ customtkinter.set_appearance_mode("dark")
 customtkinter.set_default_color_theme("dark-blue")
 
 root= customtkinter.CTk()
-root.geometry("500x500")
+root.geometry("800x500")
 
 
 def searchCountry():
     #Main.selectedCountry(entry1.get())
-    if selectedCountry(entry1.get()) != 0:
-        label1.configure(text= "Ingrese el año que desea consultar")
-        label2.configure(text= selectedCountry(entry1.get()))
+    if selectedCountry(entry1.get()) != 404:
+        searchDate()
     else:
         #Acción de valor no válido (mensaje de ERROR)
         label2.configure(text= "ERROR ERROR ERROR ERROR")
 
-
+def searchDate():
+    label1.configure(text= "Ingrese el año que desea consultar")
+    label2.configure(text= selectedCountry(entry1.get()))
+    entry1.delete(0, customtkinter.END)
+    entry1.configure(placeholder_text= "Año")
 
 
 frame= customtkinter.CTkFrame(master= root)
