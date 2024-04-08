@@ -1,10 +1,10 @@
 from numpy import void
 import requests
 import ctypes
-
+import json
 #Lista de códigos ISO de países latinoamericanos
 countries = ['ARG', 'BRA', 'CHL', 'COL', 'MEX', 'PER', 'VEN']
-
+gini_data= []
 #Mostrar lista de países al usuario.
 def countriesList():
     return countries
@@ -32,9 +32,13 @@ def selectedDate(data):
      #years= "".join(str(list(gini_data)))
     return list(gini_data.keys())
 
-#def processData(response):
-#def
-
+def selectedYear(selected_year):
+    if selected_year in gini_data.keys():
+#    # Guardar el índice GINI correspondiente al año seleccionado en la variable gini
+     gini = gini_data[selected_year]
+     return gini
+    else:
+     return 0
 #         # Solicitar al usuario que ingrese el año que desea consultar
 #         selected_year = input("Ingrese el año que desea consultar: ")  # Modificado para mantener la entrada como una cadena
 #         if selected_year in gini_data.keys():

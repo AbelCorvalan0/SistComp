@@ -15,13 +15,16 @@ def searchCountry():
         searchDate()
     else:
         #Acción de valor no válido (mensaje de ERROR)
-        label2.configure(text= "ERROR ERROR ERROR ERROR")
+        #label2.configure(text= "ERROR ERROR ERROR ERROR")
+        return
 
 def searchDate():
     label1.configure(text= "Ingrese el año que desea consultar")
     label2.configure(text= selectedCountry(entry1.get()))
     entry1.delete(0, customtkinter.END)
-    #entry1.configure(placeholder_text= "Año")
+    label2.configure(text= selectedDate(entry1.get()))
+    entry1.delete(0, customtkinter.END)
+    label2.configure(text= selectedYear(entry1.get()))
 
 
 frame= customtkinter.CTkFrame(master= root)
