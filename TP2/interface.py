@@ -26,7 +26,6 @@ def searchDate():
     entry1.delete(0, customtkinter.END)
     label2.configure(text= selectedYear(entry1.get()))
 
-
 frame= customtkinter.CTkFrame(master= root)
 frame.pack(pady=20, padx=60, fill="both", expand= True)
 
