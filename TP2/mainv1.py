@@ -40,8 +40,8 @@ def retornoIndice(selected_country, selected_year):
     
         # print(f'Datos para {selected_country}:')
         # print("Años disponibles:")
-        for year in gini_data.keys():  # Modificado para imprimir solo los años con datos disponibles
-            print(year)
+        # for year in gini_data.keys():  # Modificado para imprimir solo los años con datos disponibles
+        #    print(year)
          
         # Solicitar al usuario que ingrese el año que desea consultar
         #selected_year = input("Ingrese el año que desea consultar: ")  # Modificado para mantener la entrada como una cadena
@@ -58,6 +58,8 @@ def retornoIndice(selected_country, selected_year):
             #lib.cFloatToInt.restype = ctypes.c_int
             #value_to_convert = lib.cFloatToInt(ctypes.c_float(gini))
             #print(f'Valor entero obtenido: {value_to_convert}')
+            #print(gini_data)
+            #return gini_data
             return gini
         else:
             print("Año no disponible para el país seleccionado.")

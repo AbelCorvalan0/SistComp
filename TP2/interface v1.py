@@ -25,15 +25,23 @@ def searchDate():
     #entry1.delete(0, customtkinter.END)
     entry2= customtkinter.CTkEntry(master= frame, placeholder_text= "Año")
     entry2.pack(pady= 12, padx= 10)
-    button1= customtkinter.CTkButton(master= frame, text= "Buscar", command= viewInd)
+    button1= customtkinter.CTkButton(master= frame, text= "Buscar", command= viewInd(entry2.get()))
     button1.pack(pady= 12, padx= 10)
+    
+    def viewInd(year):
+    #label2.configure(text= retornoIndice(entry1.get(), '2019'))
+    #label3= customtkinter.CTkLabel(master= frame, text= retornoIndice(entry1.get(),  '2020'))
+        label3= customtkinter.CTkLabel(master= frame, text= retornoIndice(entry1.get(),  "'" + year + "'"))
+        label3.pack(pady= 0, padx= 10)
+        return
     return
     
-def viewInd():
-    #label2.configure(text= retornoIndice(entry1.get(), '2019'))
-    label3= customtkinter.CTkLabel(master= frame, text= retornoIndice(entry1.get(), '2019'))
-    label3.pack(pady= 0, padx= 10)
-    return
+# def viewInd(year):
+#     #label2.configure(text= retornoIndice(entry1.get(), '2019'))
+#     #label3= customtkinter.CTkLabel(master= frame, text= retornoIndice(entry1.get(),  '2020'))
+#     label3= customtkinter.CTkLabel(master= frame, text= retornoIndice(entry1.get(),  "'" + year + "'"))
+#     label3.pack(pady= 0, padx= 10)
+#     return
 
 ##### INTERFACE #####
 
