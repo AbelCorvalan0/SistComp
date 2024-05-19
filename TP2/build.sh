@@ -16,8 +16,8 @@ fi
 
 echo "Compilando la librería dinámica en C..."
 #-elf32
-nasm -f elf64 src/operation.asm -o build/operation.o
-gcc -shared -W -o lib/libaddToGINI.so src/sum_GINI.c build/operation.o -m64
+nasm -f elf32 src/operation.asm -o build/operation.o
+gcc -shared -W -o lib/libaddToGINI.so src/sum_GINI.c build/operation.o -m32
 #-m32
 
 echo "Compilacion exitosa, librería compilada y guardada en ./lib..."
