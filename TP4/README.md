@@ -1,3 +1,6 @@
+<span style="color: red;"> Falta transcribir el informe en este archivo Mardkdown (.md).
+El informe completo se encuentra en el siguiente link: [TP#4 - Módulos de Kernel](https://github.com/AbelCorvalan0/SistComp/blob/master/TP4/TP4%20-%20M%C3%B3dulo%20de%20Kernel.pdf)</span>
+
 # TP #4 Módulos de kernel - Sistemas de Computación
 
 ## Introducción
