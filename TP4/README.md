@@ -9,3 +9,10 @@ Estos permiten añadir nuevas características, controladores de dispositivos o 
 ## Primeras tareas
 
 El primer comando permite instalar un conjunto básico de herramientas de compilación llamado build-essential, que incluye compiladores y otros programas necesarios para compilar software desde el código fuente.
+
+![alt text](img/pp1.png)
+
+El segundo comando permite instalar el código fuente del kernel de Linux para permitirnos compilar el kernel desde cero, modificar la configuración del kernel o compilar módulos del kernel que no están incluidos en la distribución estándar del mismo. 
+
+![alt text](img/pp2.png)
+
