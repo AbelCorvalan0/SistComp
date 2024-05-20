@@ -7,7 +7,7 @@ kernel version is 6.5
 ----- /proc/cmdline end -----
 debug = 0xff7ffff7
 probe = 0x15938fcdaa17fcf9fffe (+memory +pci +isapnp +net +floppy +misc +misc.serial +misc.par +misc.floppy +serial +cpu +bios +monitor +mouse +scsi +usb -usb.mods +modem +modem.usb +parallel +parallel.lp +parallel.zip -isa -isa.isdn +isdn +kbd +prom +sbus +int +braille +braille.alva +braille.fhp +braille.ht -ignx11 +sys -bios.vbe -isapnp.old -isapnp.new -isapnp.mod +braille.baum -manual +fb +pppoe -scan +pcmcia +fork -parallel.imm +s390 +cpuemu -sysfs -s390disks +udev +block +block.cdrom +block.part +edd +edd.mod -bios.ddc -bios.fb -bios.mode +input +block.mods +bios.vesa -cpuemu.debug -scsi.noserial +wlan -bios.crc -hal +bios.vram +bios.acpi -bios.ddc.ports=0 +modules.pata -net.eeprom +x86emu=dump -max -lxrc)
-shm: attached segment 32775 at 0x726de125e000
+shm: attached segment 32782 at 0x73b73e9cf000
 >> hal.1: read hal data
 >> floppy.1: get nvram
 >> floppy.2: klog info
@@ -99,29 +99,29 @@ x86emu: could not init vm
       0000-0000 : i801_smbus
 ----- /proc/ioports end -----
 ----- /proc/interrupts -----
-     1:          0          0          0      24019          0          0          0          0  IR-IO-APIC    1-edge      i8042
+     1:          0          0          0      27938          0          0          0          0  IR-IO-APIC    1-edge      i8042
      8:          0          0          0          0          0          0          0          0  IR-IO-APIC    8-edge      rtc0
-     9:          0        639          0          0          0          0          0          0  IR-IO-APIC    9-fasteoi   acpi
+     9:          0        758          0          0          0          0          0          0  IR-IO-APIC    9-fasteoi   acpi
     14:          0          0          0          0          0          0          0          0  IR-IO-APIC   14-fasteoi   INT34C5:00
     16:          0          0          0          2          0          0          0          0  IR-IO-APIC   16-fasteoi   i801_smbus, idma64.2
     27:          0          0          0          0          0          0          0          0  IR-IO-APIC   27-fasteoi   idma64.0, i2c_designware.0
     36:          0          0          0          0          0          0          0          0  IR-IO-APIC   36-fasteoi   idma64.3, pxa2xx-spi.3
-    40:          0      25748      12636          0          0        810          0          0  IR-IO-APIC   40-fasteoi   idma64.1, i2c_designware.1
-    57:          0          0          0          0          0          0       3749          0  IR-IO-APIC   57-fasteoi   ELAN1200:00
+    40:          0      33157      12636          0          0        810          0          0  IR-IO-APIC   40-fasteoi   idma64.1, i2c_designware.1
+    57:          0          0          0          0          0          0       4545          0  IR-IO-APIC   57-fasteoi   ELAN1200:00
    120:          0          0          0          0          0          0          0          0  DMAR-MSI    0-edge      dmar0
    121:          0          0          0          0          0          0          0          0  DMAR-MSI    1-edge      dmar1
    122:          0          0          0          0          0          0          0          0  IR-PCI-MSI-0000:00:1c.0    0-edge      PCIe PME
    123:          0          0          0          0          0          0          1          0  IR-PCI-MSIX-0000:00:0e.0    0-edge      vmd0
    124:          0          0          0          0          0          0          0          0  IR-PCI-MSIX-0000:00:0e.0    1-edge      vmd0
    125:          0         30          0          0          0          0          1          0  IR-PCI-MSIX-0000:00:0e.0    2-edge      vmd0
-   126:        613      22690       3421        722       2434       1883       1587         26  IR-PCI-MSIX-0000:00:0e.0    3-edge      vmd0
-   127:        256        998      24387       5929       1715       2015       1285        153  IR-PCI-MSIX-0000:00:0e.0    4-edge      vmd0
-   128:        178        559       1006      35149       3911       2283       3850         19  IR-PCI-MSIX-0000:00:0e.0    5-edge      vmd0
-   129:        145        138      23776       1474       1432       3344      15359          0  IR-PCI-MSIX-0000:00:0e.0    6-edge      vmd0
-   130:         88        372       1383        977       5199       2928       4156      18794  IR-PCI-MSIX-0000:00:0e.0    7-edge      vmd0
-   131:        316       1088      25480       2368       1459       2476       2533      12505  IR-PCI-MSIX-0000:00:0e.0    8-edge      vmd0
-   132:       1962       1003       1005       2656       1134       1749      36973         20  IR-PCI-MSIX-0000:00:0e.0    9-edge      vmd0
-   133:        299       2649        448       1797        918      34132       2172         55  IR-PCI-MSIX-0000:00:0e.0   10-edge      vmd0
+   126:        628      22807       3444        846       2600       2103       1606        224  IR-PCI-MSIX-0000:00:0e.0    3-edge      vmd0
+   127:        275       1074      24673       5929       1792       2288       1456        171  IR-PCI-MSIX-0000:00:0e.0    4-edge      vmd0
+   128:        194        731       1006      35245       4076       2645       4032         19  IR-PCI-MSIX-0000:00:0e.0    5-edge      vmd0
+   129:        227        138      23787       1853       1432       3352      15732        125  IR-PCI-MSIX-0000:00:0e.0    6-edge      vmd0
+   130:         88        466       1655        977       5251       3064       4316      18794  IR-PCI-MSIX-0000:00:0e.0    7-edge      vmd0
+   131:        456       1425      25648       2368       1600       2560       2769      12505  IR-PCI-MSIX-0000:00:0e.0    8-edge      vmd0
+   132:       1962       1047       1287       2733       1225       2010      37218         42  IR-PCI-MSIX-0000:00:0e.0    9-edge      vmd0
+   133:        388       2649        466       1848       1001      34530       2377         55  IR-PCI-MSIX-0000:00:0e.0   10-edge      vmd0
    134:          0          0          0          0          0          0          0          0  IR-PCI-MSIX-0000:00:0e.0   11-edge      vmd0
    135:          0          0          0          0          0          0          0          0  IR-PCI-MSIX-0000:00:0e.0   12-edge      vmd0
    136:          0          0          0          0          0          0          0          0  IR-PCI-MSIX-0000:00:0e.0   13-edge      vmd0
@@ -130,7 +130,7 @@ x86emu: could not init vm
    139:          0          0          0          0          0          0          0          0  IR-PCI-MSIX-0000:00:0e.0   16-edge      vmd0
    140:          0          0          0          0          0          0          0          0  IR-PCI-MSIX-0000:00:0e.0   17-edge      vmd0
    141:          0          0          0          0          0          0          0          0  IR-PCI-MSIX-0000:00:0e.0   18-edge      vmd0
-   142:      15656       6740      55371        766       1594      31926       4421       2282  IR-PCI-MSI-0000:00:14.0    0-edge      xhci_hcd
+   142:      19325      11568      56311       2014       1594      36562       4877       2282  IR-PCI-MSI-0000:00:14.0    0-edge      xhci_hcd
    143:          0          0          0          0          0          0          0          0   VMD-MSI  124  PCIe PME, aerdrv, pcie-dpc
    144:          0          0          0          0          0          0          0          0   VMD-MSI  124  ahci[10000:e0:17.0]
    145:          0          0          0          0          0          0          0          0   VMD-MSI  125  nvme0q0
@@ -143,32 +143,32 @@ x86emu: could not init vm
    152:          0          0          0          0          0          0          0          0   VMD-MSI  132  nvme0q7
    153:          0          0          0          0          0          0          0          0   VMD-MSI  133  nvme0q8
    154:         50          0          0          0          0          0          0          0  IR-PCI-MSI-0000:00:16.0    0-edge      mei_me
-   155:       1106      42728      26362        223          0      31292      50004       3185  IR-PCI-MSIX-0000:00:14.3    0-edge      iwlwifi:default_queue
-   156:        115        930       2105        800        810       1936       2240        741  IR-PCI-MSIX-0000:00:14.3    1-edge      iwlwifi:queue_1
-   157:       2010       1879       1831       1755       7021       3479       1290        196  IR-PCI-MSIX-0000:00:14.3    2-edge      iwlwifi:queue_2
-   158:       1203        568       1532       2805        391       5150       4639       2507  IR-PCI-MSIX-0000:00:14.3    3-edge      iwlwifi:queue_3
-   159:        243       1918       1590       6053        737       3141       2163        435  IR-PCI-MSIX-0000:00:14.3    4-edge      iwlwifi:queue_4
-   160:       1141        762       1437        807       2570       1627       3833        372  IR-PCI-MSIX-0000:00:14.3    5-edge      iwlwifi:queue_5
-   161:        685        259       1653        798       5320       2863       4568        212  IR-PCI-MSIX-0000:00:14.3    6-edge      iwlwifi:queue_6
-   162:       1689       1392       3575        716       1328       3003       5903       1110  IR-PCI-MSIX-0000:00:14.3    7-edge      iwlwifi:queue_7
-   163:        117        365       1817       1246       4479       4431       3982         81  IR-PCI-MSIX-0000:00:14.3    8-edge      iwlwifi:queue_8
+   155:       8447      47449      26362        223          0      31292      54241       3185  IR-PCI-MSIX-0000:00:14.3    0-edge      iwlwifi:default_queue
+   156:        133        942       2119       1015       1122       2067       2307        742  IR-PCI-MSIX-0000:00:14.3    1-edge      iwlwifi:queue_1
+   157:       2035       1883       2314       1758       7117       3612       1521        196  IR-PCI-MSIX-0000:00:14.3    2-edge      iwlwifi:queue_2
+   158:       1570        568       1533       2811        602       5474       5524       2814  IR-PCI-MSIX-0000:00:14.3    3-edge      iwlwifi:queue_3
+   159:        535       2306       1793       6053        929       3179       2819        616  IR-PCI-MSIX-0000:00:14.3    4-edge      iwlwifi:queue_4
+   160:       1141        891       1652       1008       2800       1627       4227        475  IR-PCI-MSIX-0000:00:14.3    5-edge      iwlwifi:queue_5
+   161:        698        272       2026        809       5334       2893       4742        271  IR-PCI-MSIX-0000:00:14.3    6-edge      iwlwifi:queue_6
+   162:       1708       1457       3626       1541       1338       3096       6171       1203  IR-PCI-MSIX-0000:00:14.3    7-edge      iwlwifi:queue_7
+   163:        324        588       2682       1266       5000       5289       4449         91  IR-PCI-MSIX-0000:00:14.3    8-edge      iwlwifi:queue_8
    164:          0          0          3          0          0          0          0          0  IR-PCI-MSIX-0000:00:14.3    9-edge      iwlwifi:exception
-   165:          0          0          0        804          0       2546       5330    2130354  IR-PCI-MSI-0000:00:02.0    0-edge      i915
-   166:          0          0          0          0       5813          0          0          0  IR-PCI-MSI-0000:00:1f.3    0-edge      snd_hda_intel:card0
-   NMI:         72         72         71         78         68         70         69         77   Non-maskable interrupts
-   LOC:    1227303    1210753    1188689    1264259    1151897    1183710    1170119    1757321   Local timer interrupts
+   165:          0          0          0        804          0       2546       5330    2275217  IR-PCI-MSI-0000:00:02.0    0-edge      i915
+   166:          0          0          0          0       6491          0          0          0  IR-PCI-MSI-0000:00:1f.3    0-edge      snd_hda_intel:card0
+   NMI:         79         78         78         85         74         76         75         84   Non-maskable interrupts
+   LOC:    1383195    1353718    1328228    1450145    1288608    1327394    1314642    1996038   Local timer interrupts
    SPU:          0          0          0          0          0          0          0          0   Spurious interrupts
-   PMI:         72         72         71         78         68         70         69         77   Performance monitoring interrupts
-   IWI:      28985      27617      25184      24033      25502      25829      26139    1067883   IRQ work interrupts
+   PMI:         79         78         78         85         74         76         75         84   Performance monitoring interrupts
+   IWI:      31070      29447      27083      25543      27291      27527      27764    1142959   IRQ work interrupts
    RTR:          0          0          0          0          0          0          0          0   APIC ICR read retries
-   RES:      39010      41557      41991      44851      37650      41961      43464      58642   Rescheduling interrupts
-   CAL:     419362     361342     330577     315062     309900     327943     317887     303837   Function call interrupts
-   TLB:     198850     203605     201417     205994     195630     212938     203054     182128   TLB shootdowns
+   RES:      41326      44035      44232      50061      40028      44108      45713      64602   Rescheduling interrupts
+   CAL:     474501     411769     375313     360859     351855     373864     359513     345077   Function call interrupts
+   TLB:     233456     242007     236854     243882     229709     251229     237289     215408   TLB shootdowns
    TRM:          0          0          0          0          0          0          0          0   Thermal event interrupts
    THR:          0          0          0          0          0          0          0          0   Threshold APIC interrupts
    DFR:          0          0          0          0          0          0          0          0   Deferred Error APIC interrupts
    MCE:          0          0          0          0          0          0          0          0   Machine check exceptions
-   MCP:         27         28         28         28         28         28         28         28   Machine check polls
+   MCP:         31         32         32         32         32         32         32         32   Machine check polls
    ERR:          0
    MIS:          0
    PIN:          0          0          0          0          0          0          0          0   Posted-interrupt notification event
@@ -192,7 +192,7 @@ x86emu: could not init vm
   model name	: 11th Gen Intel(R) Core(TM) i5-1135G7 @ 2.40GHz
   stepping	: 1
   microcode	: 0xb4
-  cpu MHz		: 1874.467
+  cpu MHz		: 1713.923
   cache size	: 8192 KB
   physical id	: 0
   siblings	: 8
@@ -220,7 +220,7 @@ x86emu: could not init vm
   model name	: 11th Gen Intel(R) Core(TM) i5-1135G7 @ 2.40GHz
   stepping	: 1
   microcode	: 0xb4
-  cpu MHz		: 1417.914
+  cpu MHz		: 3472.823
   cache size	: 8192 KB
   physical id	: 0
   siblings	: 8
@@ -248,7 +248,7 @@ x86emu: could not init vm
   model name	: 11th Gen Intel(R) Core(TM) i5-1135G7 @ 2.40GHz
   stepping	: 1
   microcode	: 0xb4
-  cpu MHz		: 2276.511
+  cpu MHz		: 4072.686
   cache size	: 8192 KB
   physical id	: 0
   siblings	: 8
@@ -276,7 +276,7 @@ x86emu: could not init vm
   model name	: 11th Gen Intel(R) Core(TM) i5-1135G7 @ 2.40GHz
   stepping	: 1
   microcode	: 0xb4
-  cpu MHz		: 1796.556
+  cpu MHz		: 1946.198
   cache size	: 8192 KB
   physical id	: 0
   siblings	: 8
@@ -304,7 +304,7 @@ x86emu: could not init vm
   model name	: 11th Gen Intel(R) Core(TM) i5-1135G7 @ 2.40GHz
   stepping	: 1
   microcode	: 0xb4
-  cpu MHz		: 1578.535
+  cpu MHz		: 474.139
   cache size	: 8192 KB
   physical id	: 0
   siblings	: 8
@@ -332,7 +332,7 @@ x86emu: could not init vm
   model name	: 11th Gen Intel(R) Core(TM) i5-1135G7 @ 2.40GHz
   stepping	: 1
   microcode	: 0xb4
-  cpu MHz		: 1459.475
+  cpu MHz		: 794.430
   cache size	: 8192 KB
   physical id	: 0
   siblings	: 8
@@ -360,7 +360,7 @@ x86emu: could not init vm
   model name	: 11th Gen Intel(R) Core(TM) i5-1135G7 @ 2.40GHz
   stepping	: 1
   microcode	: 0xb4
-  cpu MHz		: 2377.846
+  cpu MHz		: 2793.485
   cache size	: 8192 KB
   physical id	: 0
   siblings	: 8
@@ -388,7 +388,7 @@ x86emu: could not init vm
   model name	: 11th Gen Intel(R) Core(TM) i5-1135G7 @ 2.40GHz
   stepping	: 1
   microcode	: 0xb4
-  cpu MHz		: 2650.393
+  cpu MHz		: 3645.874
   cache size	: 8192 KB
   physical id	: 0
   siblings	: 8
@@ -419,7 +419,7 @@ x86emu: could not init vm
   meminfo:    0x1dcc83000
   xen balloon:    0x0
 >> pci.1: sysfs drivers
------ sysfs driver list (id 0x1e3c428fe0185c8d) -----
+----- sysfs driver list (id 0x3e0067431909216d) -----
     snd_seq_midi: module = snd_seq_midi
        serio_raw: module = serio_raw
            atkbd: /devices/platform/i8042/serio0
@@ -1324,29 +1324,29 @@ i/o:0 0x0000 - 0x0000 (0x01) "pnp 00:05"
 i/o:0 0x0000 - 0x0000 (0x01) "0000:00:02.0"
 i/o:0 0x0000 - 0x0000 (0x01) "0000:00:1f.4"
 i/o:0 0x0000 - 0x0000 (0x01) "i801_smbus"
-irq:0  1 (    24019) "1-edge      i8042"
+irq:0  1 (    27938) "1-edge      i8042"
 irq:0  8 (        0) "8-edge      rtc0"
-irq:0  9 (      639) "9-fasteoi   acpi"
+irq:0  9 (      758) "9-fasteoi   acpi"
 irq:0 14 (        0) "14-fasteoi   INT34C5:00"
 irq:0 16 (        2) "16-fasteoi   i801_smbus" "idma64.2"
 irq:0 27 (        0) "27-fasteoi   idma64.0" "i2c_designware.0"
 irq:0 36 (        0) "36-fasteoi   idma64.3" "pxa2xx-spi.3"
-irq:0 40 (    39194) "40-fasteoi   idma64.1" "i2c_designware.1"
-irq:0 57 (     3749) "57-fasteoi   ELAN1200:00"
+irq:0 40 (    46603) "40-fasteoi   idma64.1" "i2c_designware.1"
+irq:0 57 (     4545) "57-fasteoi   ELAN1200:00"
 irq:0 120 (        0) "0-edge      dmar0"
 irq:0 121 (        0) "1-edge      dmar1"
 irq:0 122 (        0) "0-edge      PCIe PME"
 irq:0 123 (        1) "0-edge      vmd0"
 irq:0 124 (        0) "1-edge      vmd0"
 irq:0 125 (       31) "2-edge      vmd0"
-irq:0 126 (    33376) "3-edge      vmd0"
-irq:0 127 (    36738) "4-edge      vmd0"
-irq:0 128 (    46955) "5-edge      vmd0"
-irq:0 129 (    45668) "6-edge      vmd0"
-irq:0 130 (    33897) "7-edge      vmd0"
-irq:0 131 (    48225) "8-edge      vmd0"
-irq:0 132 (    46502) "9-edge      vmd0"
-irq:0 133 (    42470) "10-edge      vmd0"
+irq:0 126 (    34258) "3-edge      vmd0"
+irq:0 127 (    37658) "4-edge      vmd0"
+irq:0 128 (    47948) "5-edge      vmd0"
+irq:0 129 (    46646) "6-edge      vmd0"
+irq:0 130 (    34611) "7-edge      vmd0"
+irq:0 131 (    49331) "8-edge      vmd0"
+irq:0 132 (    47524) "9-edge      vmd0"
+irq:0 133 (    43314) "10-edge      vmd0"
 irq:0 134 (        0) "11-edge      vmd0"
 irq:0 135 (        0) "12-edge      vmd0"
 irq:0 136 (        0) "13-edge      vmd0"
@@ -1355,7 +1355,7 @@ irq:0 138 (        0) "15-edge      vmd0"
 irq:0 139 (        0) "16-edge      vmd0"
 irq:0 140 (        0) "17-edge      vmd0"
 irq:0 141 (        0) "18-edge      vmd0"
-irq:0 142 (   118756) "0-edge      xhci_hcd"
+irq:0 142 (   134533) "0-edge      xhci_hcd"
 irq:0 143 (        0) "124  PCIe PME" "aerdrv" "pcie-dpc"
 irq:0 144 (        0) "124  ahci[10000:e0:17.0]"
 irq:0 145 (        0) "125  nvme0q0"
@@ -1368,18 +1368,18 @@ irq:0 151 (        0) "131  nvme0q6"
 irq:0 152 (        0) "132  nvme0q7"
 irq:0 153 (        0) "133  nvme0q8"
 irq:0 154 (       50) "0-edge      mei_me"
-irq:0 155 (   154900) "0-edge      iwlwifi:default_queue"
-irq:0 156 (     9677) "1-edge      iwlwifi:queue_1"
-irq:0 157 (    19461) "2-edge      iwlwifi:queue_2"
-irq:0 158 (    18795) "3-edge      iwlwifi:queue_3"
-irq:0 159 (    16280) "4-edge      iwlwifi:queue_4"
-irq:0 160 (    12549) "5-edge      iwlwifi:queue_5"
-irq:0 161 (    16358) "6-edge      iwlwifi:queue_6"
-irq:0 162 (    18716) "7-edge      iwlwifi:queue_7"
-irq:0 163 (    16518) "8-edge      iwlwifi:queue_8"
+irq:0 155 (   171199) "0-edge      iwlwifi:default_queue"
+irq:0 156 (    10447) "1-edge      iwlwifi:queue_1"
+irq:0 157 (    20436) "2-edge      iwlwifi:queue_2"
+irq:0 158 (    20896) "3-edge      iwlwifi:queue_3"
+irq:0 159 (    18230) "4-edge      iwlwifi:queue_4"
+irq:0 160 (    13821) "5-edge      iwlwifi:queue_5"
+irq:0 161 (    17045) "6-edge      iwlwifi:queue_6"
+irq:0 162 (    20140) "7-edge      iwlwifi:queue_7"
+irq:0 163 (    19689) "8-edge      iwlwifi:queue_8"
 irq:0 164 (        3) "9-edge      iwlwifi:exception"
-irq:0 165 (  2139034) "0-edge      i915"
-irq:0 166 (     5813) "0-edge      snd_hda_intel:card0"
+irq:0 165 (  2283897) "0-edge      i915"
+irq:0 166 (     6491) "0-edge      snd_hda_intel:card0"
 dma:1 4 "cascade"
 ----- misc resources end -----
 >> parallel.1: pp mod
@@ -1817,11 +1817,11 @@ sysfs: no such class: usb
 ----- return code: ? -----
 >> edd.2: edd info
 >> modem.1: serial
-******  started child process 9774 (15s/120s)  ******
-******  stopped child process 9774 (120s)  ******
+******  started child process 10505 (15s/120s)  ******
+******  stopped child process 10505 (120s)  ******
 >> mouse.2: serial
-******  started child process 9775 (20s/20s)  ******
-******  stopped child process 9775 (20s)  ******
+******  started child process 10506 (20s/20s)  ******
+******  stopped child process 10506 (20s)  ******
 >> input.1: joydev mod
 >> input.1.1: evdev mod
 ----- exec: "/sbin/modprobe evdev " -----
@@ -2093,7 +2093,7 @@ unknown non-USB input device
   model name	: 11th Gen Intel(R) Core(TM) i5-1135G7 @ 2.40GHz
   stepping	: 1
   microcode	: 0xb4
-  cpu MHz		: 1907.348
+  cpu MHz		: 3814.949
   cache size	: 8192 KB
   physical id	: 0
   siblings	: 8
@@ -2121,7 +2121,7 @@ unknown non-USB input device
   model name	: 11th Gen Intel(R) Core(TM) i5-1135G7 @ 2.40GHz
   stepping	: 1
   microcode	: 0xb4
-  cpu MHz		: 3063.766
+  cpu MHz		: 3646.996
   cache size	: 8192 KB
   physical id	: 0
   siblings	: 8
@@ -2149,7 +2149,7 @@ unknown non-USB input device
   model name	: 11th Gen Intel(R) Core(TM) i5-1135G7 @ 2.40GHz
   stepping	: 1
   microcode	: 0xb4
-  cpu MHz		: 848.660
+  cpu MHz		: 760.917
   cache size	: 8192 KB
   physical id	: 0
   siblings	: 8
@@ -2177,7 +2177,7 @@ unknown non-USB input device
   model name	: 11th Gen Intel(R) Core(TM) i5-1135G7 @ 2.40GHz
   stepping	: 1
   microcode	: 0xb4
-  cpu MHz		: 1041.383
+  cpu MHz		: 3742.434
   cache size	: 8192 KB
   physical id	: 0
   siblings	: 8
@@ -2205,7 +2205,7 @@ unknown non-USB input device
   model name	: 11th Gen Intel(R) Core(TM) i5-1135G7 @ 2.40GHz
   stepping	: 1
   microcode	: 0xb4
-  cpu MHz		: 437.827
+  cpu MHz		: 3799.046
   cache size	: 8192 KB
   physical id	: 0
   siblings	: 8
@@ -2261,7 +2261,7 @@ unknown non-USB input device
   model name	: 11th Gen Intel(R) Core(TM) i5-1135G7 @ 2.40GHz
   stepping	: 1
   microcode	: 0xb4
-  cpu MHz		: 883.372
+  cpu MHz		: 3449.546
   cache size	: 8192 KB
   physical id	: 0
   siblings	: 8
@@ -2289,7 +2289,7 @@ unknown non-USB input device
   model name	: 11th Gen Intel(R) Core(TM) i5-1135G7 @ 2.40GHz
   stepping	: 1
   microcode	: 0xb4
-  cpu MHz		: 656.869
+  cpu MHz		: 1510.195
   cache size	: 8192 KB
   physical id	: 0
   siblings	: 8
@@ -3251,7 +3251,7 @@ wlo1: socket failed: Operation not permitted
   E: SUBSYSTEM=power_supply
   E: POWER_SUPPLY_NAME=AC0
   E: POWER_SUPPLY_TYPE=Mains
-  E: POWER_SUPPLY_ONLINE=0
+  E: POWER_SUPPLY_ONLINE=1
   
   P: /devices/LNXSYSTM:00/LNXSYBUS:00/PNP0A08:00/device:09/PNP0C09:01/ACPI0003:00/power_supply/AC0/hwmon0
   L: 0
@@ -3330,17 +3330,17 @@ wlo1: socket failed: Operation not permitted
   E: SUBSYSTEM=power_supply
   E: POWER_SUPPLY_NAME=BAT0
   E: POWER_SUPPLY_TYPE=Battery
-  E: POWER_SUPPLY_STATUS=Discharging
+  E: POWER_SUPPLY_STATUS=Charging
   E: POWER_SUPPLY_PRESENT=1
   E: POWER_SUPPLY_TECHNOLOGY=Li-ion
-  E: POWER_SUPPLY_CYCLE_COUNT=526
+  E: POWER_SUPPLY_CYCLE_COUNT=527
   E: POWER_SUPPLY_VOLTAGE_MIN_DESIGN=7850000
   E: POWER_SUPPLY_VOLTAGE_NOW=7850000
-  E: POWER_SUPPLY_POWER_NOW=6437000
+  E: POWER_SUPPLY_POWER_NOW=28448000
   E: POWER_SUPPLY_ENERGY_FULL_DESIGN=37130000
   E: POWER_SUPPLY_ENERGY_FULL=30740000
-  E: POWER_SUPPLY_ENERGY_NOW=7685000
-  E: POWER_SUPPLY_CAPACITY=25
+  E: POWER_SUPPLY_ENERGY_NOW=9804000
+  E: POWER_SUPPLY_CAPACITY=31
   E: POWER_SUPPLY_CAPACITY_LEVEL=Normal
   E: POWER_SUPPLY_MODEL_NAME=ASUS Battery
   E: POWER_SUPPLY_MANUFACTURER=ASUSTeK
@@ -5002,8 +5002,8 @@ wlo1: socket failed: Operation not permitted
   E: ID_PATH_TAG=pci-0000_00_02_0
   E: ID_FOR_SEAT=drm-pci-0000_00_02_0
   E: DEVLINKS=/dev/dri/by-path/pci-0000:00:02.0-card
-  E: TAGS=:master-of-seat:snap_snapd-desktop-integration_snapd-desktop-integration:seat:mutter-device-disable-kms-modifiers:snap_snap-store_snap-store:uaccess:snap_snap-store_ubuntu-software:snap_telegram-desktop_telegram-desktop:snap_firefox_geckodriver:snap_firefox_firefox:snap_snap-store_ubuntu-software-local-file:
-  E: CURRENT_TAGS=:master-of-seat:snap_snapd-desktop-integration_snapd-desktop-integration:seat:mutter-device-disable-kms-modifiers:snap_snap-store_snap-store:uaccess:snap_snap-store_ubuntu-software:snap_firefox_geckodriver:snap_telegram-desktop_telegram-desktop:snap_firefox_firefox:snap_snap-store_ubuntu-software-local-file:
+  E: TAGS=:snap_snapd-desktop-integration_snapd-desktop-integration:snap_snap-store_ubuntu-software-local-file:mutter-device-disable-kms-modifiers:snap_telegram-desktop_telegram-desktop:uaccess:snap_snap-store_ubuntu-software:snap_firefox_geckodriver:snap_snap-store_snap-store:master-of-seat:seat:snap_firefox_firefox:
+  E: CURRENT_TAGS=:snap_snapd-desktop-integration_snapd-desktop-integration:snap_snap-store_ubuntu-software-local-file:mutter-device-disable-kms-modifiers:snap_snap-store_ubuntu-software:uaccess:snap_telegram-desktop_telegram-desktop:snap_firefox_geckodriver:snap_snap-store_snap-store:master-of-seat:seat:snap_firefox_firefox:
   
   P: /devices/pci0000:00/0000:00:02.0/drm/card0/card0-DP-1
   L: 0
@@ -5014,8 +5014,8 @@ wlo1: socket failed: Operation not permitted
   E: ID_PATH=pci-0000:00:02.0
   E: ID_PATH_TAG=pci-0000_00_02_0
   E: ID_FOR_SEAT=drm-pci-0000_00_02_0
-  E: TAGS=:snap_snap-store_ubuntu-software-local-file:snap_firefox_geckodriver:snap_snap-store_ubuntu-software:snap_snapd-desktop-integration_snapd-desktop-integration:seat:mutter-device-disable-kms-modifiers:snap_telegram-desktop_telegram-desktop:master-of-seat:snap_firefox_firefox:snap_snap-store_snap-store:
-  E: CURRENT_TAGS=:snap_snap-store_ubuntu-software-local-file:snap_firefox_geckodriver:snap_snap-store_ubuntu-software:snap_snapd-desktop-integration_snapd-desktop-integration:seat:mutter-device-disable-kms-modifiers:snap_telegram-desktop_telegram-desktop:master-of-seat:snap_firefox_firefox:snap_snap-store_snap-store:
+  E: TAGS=:snap_snap-store_ubuntu-software:snap_snap-store_ubuntu-software-local-file:snap_snap-store_snap-store:snap_firefox_firefox:seat:snap_snapd-desktop-integration_snapd-desktop-integration:mutter-device-disable-kms-modifiers:snap_telegram-desktop_telegram-desktop:snap_firefox_geckodriver:master-of-seat:
+  E: CURRENT_TAGS=:snap_snap-store_ubuntu-software:snap_snap-store_ubuntu-software-local-file:snap_snap-store_snap-store:snap_firefox_firefox:seat:snap_snapd-desktop-integration_snapd-desktop-integration:mutter-device-disable-kms-modifiers:snap_telegram-desktop_telegram-desktop:snap_firefox_geckodriver:master-of-seat:
   
   P: /devices/pci0000:00/0000:00:02.0/drm/card0/card0-DP-1/drm_dp_aux1
   N: drm_dp_aux1
@@ -5049,8 +5049,8 @@ wlo1: socket failed: Operation not permitted
   E: ID_PATH=pci-0000:00:02.0
   E: ID_PATH_TAG=pci-0000_00_02_0
   E: ID_FOR_SEAT=drm-pci-0000_00_02_0
-  E: TAGS=:mutter-device-disable-kms-modifiers:snap_firefox_geckodriver:seat:master-of-seat:snap_snap-store_ubuntu-software-local-file:snap_telegram-desktop_telegram-desktop:snap_snap-store_ubuntu-software:snap_snap-store_snap-store:snap_snapd-desktop-integration_snapd-desktop-integration:snap_firefox_firefox:
-  E: CURRENT_TAGS=:mutter-device-disable-kms-modifiers:snap_firefox_geckodriver:seat:master-of-seat:snap_snap-store_ubuntu-software-local-file:snap_telegram-desktop_telegram-desktop:snap_snap-store_ubuntu-software:snap_snap-store_snap-store:snap_snapd-desktop-integration_snapd-desktop-integration:snap_firefox_firefox:
+  E: TAGS=:snap_snap-store_ubuntu-software-local-file:mutter-device-disable-kms-modifiers:snap_snap-store_snap-store:seat:snap_firefox_geckodriver:snap_telegram-desktop_telegram-desktop:master-of-seat:snap_firefox_firefox:snap_snapd-desktop-integration_snapd-desktop-integration:snap_snap-store_ubuntu-software:
+  E: CURRENT_TAGS=:snap_snap-store_ubuntu-software-local-file:mutter-device-disable-kms-modifiers:snap_snap-store_snap-store:seat:snap_firefox_geckodriver:snap_telegram-desktop_telegram-desktop:master-of-seat:snap_firefox_firefox:snap_snapd-desktop-integration_snapd-desktop-integration:snap_snap-store_ubuntu-software:
   
   P: /devices/pci0000:00/0000:00:02.0/drm/card0/card0-eDP-1
   L: 0
@@ -5061,8 +5061,8 @@ wlo1: socket failed: Operation not permitted
   E: ID_PATH=pci-0000:00:02.0
   E: ID_PATH_TAG=pci-0000_00_02_0
   E: ID_FOR_SEAT=drm-pci-0000_00_02_0
-  E: TAGS=:seat:master-of-seat:snap_snap-store_ubuntu-software-local-file:snap_snap-store_ubuntu-software:snap_telegram-desktop_telegram-desktop:snap_snap-store_snap-store:snap_snapd-desktop-integration_snapd-desktop-integration:snap_firefox_geckodriver:snap_firefox_firefox:mutter-device-disable-kms-modifiers:
-  E: CURRENT_TAGS=:seat:master-of-seat:snap_snap-store_ubuntu-software-local-file:snap_snap-store_ubuntu-software:snap_telegram-desktop_telegram-desktop:snap_snap-store_snap-store:snap_snapd-desktop-integration_snapd-desktop-integration:snap_firefox_geckodriver:snap_firefox_firefox:mutter-device-disable-kms-modifiers:
+  E: TAGS=:seat:snap_firefox_geckodriver:snap_snap-store_snap-store:mutter-device-disable-kms-modifiers:master-of-seat:snap_firefox_firefox:snap_telegram-desktop_telegram-desktop:snap_snap-store_ubuntu-software:snap_snapd-desktop-integration_snapd-desktop-integration:snap_snap-store_ubuntu-software-local-file:
+  E: CURRENT_TAGS=:seat:snap_firefox_geckodriver:snap_snap-store_snap-store:mutter-device-disable-kms-modifiers:master-of-seat:snap_firefox_firefox:snap_telegram-desktop_telegram-desktop:snap_snap-store_ubuntu-software:snap_snapd-desktop-integration_snapd-desktop-integration:snap_snap-store_ubuntu-software-local-file:
   
   P: /devices/pci0000:00/0000:00:02.0/drm/card0/card0-eDP-1/drm_dp_aux0
   N: drm_dp_aux0
@@ -5114,8 +5114,8 @@ wlo1: socket failed: Operation not permitted
   E: ID_PATH_TAG=pci-0000_00_02_0
   E: ID_FOR_SEAT=drm-pci-0000_00_02_0
   E: DEVLINKS=/dev/dri/by-path/pci-0000:00:02.0-render
-  E: TAGS=:snap_snapd-desktop-integration_snapd-desktop-integration:snap_snap-store_ubuntu-software-local-file:uaccess:snap_firefox_geckodriver:snap_snap-store_ubuntu-software:seat:mutter-device-disable-kms-modifiers:snap_firefox_firefox:snap_telegram-desktop_telegram-desktop:snap_snap-store_snap-store:
-  E: CURRENT_TAGS=:snap_snapd-desktop-integration_snapd-desktop-integration:snap_snap-store_ubuntu-software-local-file:uaccess:snap_firefox_geckodriver:snap_snap-store_ubuntu-software:seat:mutter-device-disable-kms-modifiers:snap_firefox_firefox:snap_telegram-desktop_telegram-desktop:snap_snap-store_snap-store:
+  E: TAGS=:snap_snapd-desktop-integration_snapd-desktop-integration:snap_snap-store_snap-store:seat:snap_telegram-desktop_telegram-desktop:snap_firefox_geckodriver:mutter-device-disable-kms-modifiers:snap_snap-store_ubuntu-software:snap_snap-store_ubuntu-software-local-file:snap_firefox_firefox:uaccess:
+  E: CURRENT_TAGS=:snap_snapd-desktop-integration_snapd-desktop-integration:snap_snap-store_snap-store:seat:snap_telegram-desktop_telegram-desktop:snap_firefox_geckodriver:mutter-device-disable-kms-modifiers:snap_snap-store_ubuntu-software:snap_snap-store_ubuntu-software-local-file:snap_firefox_firefox:uaccess:
   
   P: /devices/pci0000:00/0000:00:02.0/graphics/fb0
   N: fb0
@@ -5504,10 +5504,10 @@ wlo1: socket failed: Operation not permitted
   P: /devices/pci0000:00/0000:00:0e.0/pci10000:e0/10000:e0:1c.4/10000:e1:00.0/nvme/nvme0/nvme0n1
   N: nvme0n1
   L: 0
-  S: disk/by-id/nvme-eui.e8238fa6bf530001001b448b48fca953
   S: disk/by-id/nvme-WDC_PC_SN530_SDBPNPZ-256G-1002_21205D807676
-  S: disk/by-id/nvme-WDC_PC_SN530_SDBPNPZ-256G-1002_21205D807676_1
   S: disk/by-path/pci-0000:00:0e.0-pci-10000:e1:00.0-nvme-1
+  S: disk/by-id/nvme-eui.e8238fa6bf530001001b448b48fca953
+  S: disk/by-id/nvme-WDC_PC_SN530_SDBPNPZ-256G-1002_21205D807676_1
   E: DEVPATH=/devices/pci0000:00/0000:00:0e.0/pci10000:e0/10000:e0:1c.4/10000:e1:00.0/nvme/nvme0/nvme0n1
   E: SUBSYSTEM=block
   E: DEVNAME=/dev/nvme0n1
@@ -5526,20 +5526,20 @@ wlo1: socket failed: Operation not permitted
   E: ID_PATH_TAG=pci-0000_00_0e_0-pci-10000_e1_00_0-nvme-1
   E: ID_PART_TABLE_UUID=c52a6fd0-82ab-4abb-b9d9-8841492f693a
   E: ID_PART_TABLE_TYPE=gpt
-  E: DEVLINKS=/dev/disk/by-id/nvme-eui.e8238fa6bf530001001b448b48fca953 /dev/disk/by-id/nvme-WDC_PC_SN530_SDBPNPZ-256G-1002_21205D807676 /dev/disk/by-id/nvme-WDC_PC_SN530_SDBPNPZ-256G-1002_21205D807676_1 /dev/disk/by-path/pci-0000:00:0e.0-pci-10000:e1:00.0-nvme-1
+  E: DEVLINKS=/dev/disk/by-id/nvme-WDC_PC_SN530_SDBPNPZ-256G-1002_21205D807676 /dev/disk/by-path/pci-0000:00:0e.0-pci-10000:e1:00.0-nvme-1 /dev/disk/by-id/nvme-eui.e8238fa6bf530001001b448b48fca953 /dev/disk/by-id/nvme-WDC_PC_SN530_SDBPNPZ-256G-1002_21205D807676_1
   E: TAGS=:systemd:
   E: CURRENT_TAGS=:systemd:
   
   P: /devices/pci0000:00/0000:00:0e.0/pci10000:e0/10000:e0:1c.4/10000:e1:00.0/nvme/nvme0/nvme0n1/nvme0n1p1
   N: nvme0n1p1
   L: 0
-  S: disk/by-path/pci-0000:00:0e.0-pci-10000:e1:00.0-nvme-1-part1
-  S: disk/by-partuuid/61e6ad9c-ee4a-4a9d-9bb4-9c9fc63f5bde
   S: disk/by-partlabel/EFI\x20System\x20Partition
   S: disk/by-id/nvme-WDC_PC_SN530_SDBPNPZ-256G-1002_21205D807676-part1
-  S: disk/by-uuid/41BE-023F
   S: disk/by-id/nvme-eui.e8238fa6bf530001001b448b48fca953-part1
+  S: disk/by-path/pci-0000:00:0e.0-pci-10000:e1:00.0-nvme-1-part1
+  S: disk/by-partuuid/61e6ad9c-ee4a-4a9d-9bb4-9c9fc63f5bde
   S: disk/by-id/nvme-WDC_PC_SN530_SDBPNPZ-256G-1002_21205D807676_1-part1
+  S: disk/by-uuid/41BE-023F
   E: DEVPATH=/devices/pci0000:00/0000:00:0e.0/pci10000:e0/10000:e0:1c.4/10000:e1:00.0/nvme/nvme0/nvme0n1/nvme0n1p1
   E: SUBSYSTEM=block
   E: DEVNAME=/dev/nvme0n1p1
@@ -5574,19 +5574,19 @@ wlo1: socket failed: Operation not permitted
   E: ID_PART_ENTRY_SIZE=1048576
   E: ID_PART_ENTRY_DISK=259:0
   E: UDISKS_IGNORE=1
-  E: DEVLINKS=/dev/disk/by-path/pci-0000:00:0e.0-pci-10000:e1:00.0-nvme-1-part1 /dev/disk/by-partuuid/61e6ad9c-ee4a-4a9d-9bb4-9c9fc63f5bde /dev/disk/by-partlabel/EFI\x20System\x20Partition /dev/disk/by-id/nvme-WDC_PC_SN530_SDBPNPZ-256G-1002_21205D807676-part1 /dev/disk/by-uuid/41BE-023F /dev/disk/by-id/nvme-eui.e8238fa6bf530001001b448b48fca953-part1 /dev/disk/by-id/nvme-WDC_PC_SN530_SDBPNPZ-256G-1002_21205D807676_1-part1
+  E: DEVLINKS=/dev/disk/by-partlabel/EFI\x20System\x20Partition /dev/disk/by-id/nvme-WDC_PC_SN530_SDBPNPZ-256G-1002_21205D807676-part1 /dev/disk/by-id/nvme-eui.e8238fa6bf530001001b448b48fca953-part1 /dev/disk/by-path/pci-0000:00:0e.0-pci-10000:e1:00.0-nvme-1-part1 /dev/disk/by-partuuid/61e6ad9c-ee4a-4a9d-9bb4-9c9fc63f5bde /dev/disk/by-id/nvme-WDC_PC_SN530_SDBPNPZ-256G-1002_21205D807676_1-part1 /dev/disk/by-uuid/41BE-023F
   E: TAGS=:systemd:
   E: CURRENT_TAGS=:systemd:
   
   P: /devices/pci0000:00/0000:00:0e.0/pci10000:e0/10000:e0:1c.4/10000:e1:00.0/nvme/nvme0/nvme0n1/nvme0n1p2
   N: nvme0n1p2
   L: 0
-  S: disk/by-id/nvme-WDC_PC_SN530_SDBPNPZ-256G-1002_21205D807676-part2
+  S: disk/by-id/nvme-WDC_PC_SN530_SDBPNPZ-256G-1002_21205D807676_1-part2
   S: disk/by-path/pci-0000:00:0e.0-pci-10000:e1:00.0-nvme-1-part2
+  S: disk/by-partuuid/7cb4f0d1-2662-49b3-98b2-66c2d29a13ab
+  S: disk/by-id/nvme-WDC_PC_SN530_SDBPNPZ-256G-1002_21205D807676-part2
   S: disk/by-id/nvme-eui.e8238fa6bf530001001b448b48fca953-part2
   S: disk/by-uuid/2c6e77bb-d3b9-47ba-a4e4-46b6a68b34de
-  S: disk/by-id/nvme-WDC_PC_SN530_SDBPNPZ-256G-1002_21205D807676_1-part2
-  S: disk/by-partuuid/7cb4f0d1-2662-49b3-98b2-66c2d29a13ab
   E: DEVPATH=/devices/pci0000:00/0000:00:0e.0/pci10000:e0/10000:e0:1c.4/10000:e1:00.0/nvme/nvme0/nvme0n1/nvme0n1p2
   E: SUBSYSTEM=block
   E: DEVNAME=/dev/nvme0n1p2
@@ -5618,7 +5618,7 @@ wlo1: socket failed: Operation not permitted
   E: ID_PART_ENTRY_OFFSET=1050624
   E: ID_PART_ENTRY_SIZE=499066880
   E: ID_PART_ENTRY_DISK=259:0
-  E: DEVLINKS=/dev/disk/by-id/nvme-WDC_PC_SN530_SDBPNPZ-256G-1002_21205D807676-part2 /dev/disk/by-path/pci-0000:00:0e.0-pci-10000:e1:00.0-nvme-1-part2 /dev/disk/by-id/nvme-eui.e8238fa6bf530001001b448b48fca953-part2 /dev/disk/by-uuid/2c6e77bb-d3b9-47ba-a4e4-46b6a68b34de /dev/disk/by-id/nvme-WDC_PC_SN530_SDBPNPZ-256G-1002_21205D807676_1-part2 /dev/disk/by-partuuid/7cb4f0d1-2662-49b3-98b2-66c2d29a13ab
+  E: DEVLINKS=/dev/disk/by-id/nvme-WDC_PC_SN530_SDBPNPZ-256G-1002_21205D807676_1-part2 /dev/disk/by-path/pci-0000:00:0e.0-pci-10000:e1:00.0-nvme-1-part2 /dev/disk/by-partuuid/7cb4f0d1-2662-49b3-98b2-66c2d29a13ab /dev/disk/by-id/nvme-WDC_PC_SN530_SDBPNPZ-256G-1002_21205D807676-part2 /dev/disk/by-id/nvme-eui.e8238fa6bf530001001b448b48fca953-part2 /dev/disk/by-uuid/2c6e77bb-d3b9-47ba-a4e4-46b6a68b34de
   E: TAGS=:systemd:
   E: CURRENT_TAGS=:systemd:
   
@@ -5812,8 +5812,8 @@ wlo1: socket failed: Operation not permitted
   P: /devices/pci0000:00/0000:00:14.0/usb1/1-1/1-1:1.0/0003:046D:C077.0002/input/input6/event6
   N: input/event6
   L: 0
-  S: input/by-path/pci-0000:00:14.0-usb-0:1:1.0-event-mouse
   S: input/by-id/usb-Logitech_USB_Optical_Mouse-event-mouse
+  S: input/by-path/pci-0000:00:14.0-usb-0:1:1.0-event-mouse
   E: DEVPATH=/devices/pci0000:00/0000:00:14.0/usb1/1-1/1-1:1.0/0003:046D:C077.0002/input/input6/event6
   E: SUBSYSTEM=input
   E: DEVNAME=/dev/input/event6
@@ -5838,13 +5838,13 @@ wlo1: socket failed: Operation not permitted
   E: ID_PATH=pci-0000:00:14.0-usb-0:1:1.0
   E: ID_PATH_TAG=pci-0000_00_14_0-usb-0_1_1_0
   E: LIBINPUT_DEVICE_GROUP=3/46d/c077:usb-0000:00:14.0-1
-  E: DEVLINKS=/dev/input/by-path/pci-0000:00:14.0-usb-0:1:1.0-event-mouse /dev/input/by-id/usb-Logitech_USB_Optical_Mouse-event-mouse
+  E: DEVLINKS=/dev/input/by-id/usb-Logitech_USB_Optical_Mouse-event-mouse /dev/input/by-path/pci-0000:00:14.0-usb-0:1:1.0-event-mouse
   
   P: /devices/pci0000:00/0000:00:14.0/usb1/1-1/1-1:1.0/0003:046D:C077.0002/input/input6/mouse2
   N: input/mouse2
   L: 0
-  S: input/by-id/usb-Logitech_USB_Optical_Mouse-mouse
   S: input/by-path/pci-0000:00:14.0-usb-0:1:1.0-mouse
+  S: input/by-id/usb-Logitech_USB_Optical_Mouse-mouse
   E: DEVPATH=/devices/pci0000:00/0000:00:14.0/usb1/1-1/1-1:1.0/0003:046D:C077.0002/input/input6/mouse2
   E: SUBSYSTEM=input
   E: DEVNAME=/dev/input/mouse2
@@ -5868,7 +5868,7 @@ wlo1: socket failed: Operation not permitted
   E: ID_USB_DRIVER=usbhid
   E: ID_PATH=pci-0000:00:14.0-usb-0:1:1.0
   E: ID_PATH_TAG=pci-0000_00_14_0-usb-0_1_1_0
-  E: DEVLINKS=/dev/input/by-id/usb-Logitech_USB_Optical_Mouse-mouse /dev/input/by-path/pci-0000:00:14.0-usb-0:1:1.0-mouse
+  E: DEVLINKS=/dev/input/by-path/pci-0000:00:14.0-usb-0:1:1.0-mouse /dev/input/by-id/usb-Logitech_USB_Optical_Mouse-mouse
   
   P: /devices/pci0000:00/0000:00:14.0/usb1/1-10
   N: bus/usb/001/004
@@ -6024,14 +6024,14 @@ wlo1: socket failed: Operation not permitted
   E: ID_PATH=pci-0000:00:14.0-usb-0:3:1.0
   E: ID_PATH_TAG=pci-0000_00_14_0-usb-0_3_1_0
   E: ID_FOR_SEAT=media-pci-0000_00_14_0-usb-0_3_1_0
-  E: TAGS=:seat:uaccess:
-  E: CURRENT_TAGS=:seat:uaccess:
+  E: TAGS=:uaccess:seat:
+  E: CURRENT_TAGS=:uaccess:seat:
   
   P: /devices/pci0000:00/0000:00:14.0/usb1/1-3/1-3:1.0/video4linux/video0
   N: video0
   L: 0
-  S: v4l/by-path/pci-0000:00:14.0-usb-0:3:1.0-video-index0
   S: v4l/by-id/usb-Azurewave_USB2.0_VGA_UVC_WebCam-video-index0
+  S: v4l/by-path/pci-0000:00:14.0-usb-0:3:1.0-video-index0
   E: DEVPATH=/devices/pci0000:00/0000:00:14.0/usb1/1-3/1-3:1.0/video4linux/video0
   E: SUBSYSTEM=video4linux
   E: DEVNAME=/dev/video0
@@ -6059,15 +6059,15 @@ wlo1: socket failed: Operation not permitted
   E: ID_FOR_SEAT=video4linux-pci-0000_00_14_0-usb-0_3_1_0
   E: COLORD_DEVICE=1
   E: COLORD_KIND=camera
-  E: DEVLINKS=/dev/v4l/by-path/pci-0000:00:14.0-usb-0:3:1.0-video-index0 /dev/v4l/by-id/usb-Azurewave_USB2.0_VGA_UVC_WebCam-video-index0
-  E: TAGS=:snap_telegram-desktop_telegram-desktop:uaccess:seat:snap_firefox_firefox:snap_firefox_geckodriver:
-  E: CURRENT_TAGS=:snap_telegram-desktop_telegram-desktop:uaccess:seat:snap_firefox_firefox:snap_firefox_geckodriver:
+  E: DEVLINKS=/dev/v4l/by-id/usb-Azurewave_USB2.0_VGA_UVC_WebCam-video-index0 /dev/v4l/by-path/pci-0000:00:14.0-usb-0:3:1.0-video-index0
+  E: TAGS=:snap_firefox_geckodriver:snap_telegram-desktop_telegram-desktop:uaccess:snap_firefox_firefox:seat:
+  E: CURRENT_TAGS=:snap_firefox_geckodriver:snap_telegram-desktop_telegram-desktop:uaccess:snap_firefox_firefox:seat:
   
   P: /devices/pci0000:00/0000:00:14.0/usb1/1-3/1-3:1.0/video4linux/video1
   N: video1
   L: 0
-  S: v4l/by-id/usb-Azurewave_USB2.0_VGA_UVC_WebCam-video-index1
   S: v4l/by-path/pci-0000:00:14.0-usb-0:3:1.0-video-index1
+  S: v4l/by-id/usb-Azurewave_USB2.0_VGA_UVC_WebCam-video-index1
   E: DEVPATH=/devices/pci0000:00/0000:00:14.0/usb1/1-3/1-3:1.0/video4linux/video1
   E: SUBSYSTEM=video4linux
   E: DEVNAME=/dev/video1
@@ -6095,9 +6095,9 @@ wlo1: socket failed: Operation not permitted
   E: ID_FOR_SEAT=video4linux-pci-0000_00_14_0-usb-0_3_1_0
   E: COLORD_DEVICE=1
   E: COLORD_KIND=camera
-  E: DEVLINKS=/dev/v4l/by-id/usb-Azurewave_USB2.0_VGA_UVC_WebCam-video-index1 /dev/v4l/by-path/pci-0000:00:14.0-usb-0:3:1.0-video-index1
-  E: TAGS=:seat:snap_firefox_firefox:uaccess:snap_firefox_geckodriver:snap_telegram-desktop_telegram-desktop:
-  E: CURRENT_TAGS=:seat:snap_firefox_firefox:uaccess:snap_firefox_geckodriver:snap_telegram-desktop_telegram-desktop:
+  E: DEVLINKS=/dev/v4l/by-path/pci-0000:00:14.0-usb-0:3:1.0-video-index1 /dev/v4l/by-id/usb-Azurewave_USB2.0_VGA_UVC_WebCam-video-index1
+  E: TAGS=:uaccess:snap_firefox_firefox:snap_telegram-desktop_telegram-desktop:seat:snap_firefox_geckodriver:
+  E: CURRENT_TAGS=:uaccess:snap_firefox_firefox:snap_telegram-desktop_telegram-desktop:seat:snap_firefox_geckodriver:
   
   P: /devices/pci0000:00/0000:00:14.0/usb1/1-3/1-3:1.1
   L: 0
@@ -9849,8 +9849,8 @@ wlo1: socket failed: Operation not permitted
   E: MAJOR=249
   E: MINOR=0
   E: USEC_INITIALIZED=840367
-  E: TAGS=:snap_snapd-desktop-integration_snapd-desktop-integration:snap_snap-store_snap-store:snap_telegram-desktop_telegram-desktop:snap_snap-store_ubuntu-software:snap_snap-store_ubuntu-software-local-file:snap_firefox_geckodriver:snap_firefox_firefox:
-  E: CURRENT_TAGS=:snap_snapd-desktop-integration_snapd-desktop-integration:snap_snap-store_snap-store:snap_telegram-desktop_telegram-desktop:snap_snap-store_ubuntu-software:snap_snap-store_ubuntu-software-local-file:snap_firefox_geckodriver:snap_firefox_firefox:
+  E: TAGS=:snap_telegram-desktop_telegram-desktop:snap_snap-store_ubuntu-software:snap_snap-store_snap-store:snap_snapd-desktop-integration_snapd-desktop-integration:snap_snap-store_ubuntu-software-local-file:snap_firefox_firefox:snap_firefox_geckodriver:
+  E: CURRENT_TAGS=:snap_telegram-desktop_telegram-desktop:snap_snap-store_ubuntu-software:snap_snap-store_snap-store:snap_snapd-desktop-integration_snapd-desktop-integration:snap_snap-store_ubuntu-software-local-file:snap_firefox_firefox:snap_firefox_geckodriver:
   
   P: /devices/virtual/dmi/id
   L: 0
@@ -10092,8 +10092,8 @@ wlo1: socket failed: Operation not permitted
   E: MAJOR=10
   E: MINOR=232
   E: USEC_INITIALIZED=3614318
-  E: TAGS=:seat:uaccess:
-  E: CURRENT_TAGS=:seat:uaccess:
+  E: TAGS=:uaccess:seat:
+  E: CURRENT_TAGS=:uaccess:seat:
   
   P: /devices/virtual/misc/loop-control
   N: loop-control
@@ -10132,8 +10132,8 @@ wlo1: socket failed: Operation not permitted
   E: MINOR=242
   E: USEC_INITIALIZED=2886465
   E: SYSTEMD_WANTS=systemd-rfkill.socket
-  E: TAGS=:seat:uaccess:systemd:
-  E: CURRENT_TAGS=:seat:uaccess:systemd:
+  E: TAGS=:uaccess:seat:systemd:
+  E: CURRENT_TAGS=:uaccess:seat:systemd:
   
   P: /devices/virtual/misc/snapshot
   N: snapshot
@@ -11977,13 +11977,13 @@ udev link /dev/input/by-path/pci-0000:00:15.1-platform-i2c_designware.1-mouse po
   name: /dev/ng0n1
 /devices/pci0000:00/0000:00:0e.0/pci10000:e0/10000:e0:1c.4/10000:e1:00.0/nvme/nvme0/nvme0n1
   name: /dev/nvme0n1
-  links: /dev/disk/by-id/nvme-eui.e8238fa6bf530001001b448b48fca953, /dev/disk/by-id/nvme-WDC_PC_SN530_SDBPNPZ-256G-1002_21205D807676, /dev/disk/by-id/nvme-WDC_PC_SN530_SDBPNPZ-256G-1002_21205D807676_1, /dev/disk/by-path/pci-0000:00:0e.0-pci-10000:e1:00.0-nvme-1
+  links: /dev/disk/by-id/nvme-WDC_PC_SN530_SDBPNPZ-256G-1002_21205D807676, /dev/disk/by-path/pci-0000:00:0e.0-pci-10000:e1:00.0-nvme-1, /dev/disk/by-id/nvme-eui.e8238fa6bf530001001b448b48fca953, /dev/disk/by-id/nvme-WDC_PC_SN530_SDBPNPZ-256G-1002_21205D807676_1
 /devices/pci0000:00/0000:00:0e.0/pci10000:e0/10000:e0:1c.4/10000:e1:00.0/nvme/nvme0/nvme0n1/nvme0n1p1
   name: /dev/nvme0n1p1
-  links: /dev/disk/by-path/pci-0000:00:0e.0-pci-10000:e1:00.0-nvme-1-part1, /dev/disk/by-partuuid/61e6ad9c-ee4a-4a9d-9bb4-9c9fc63f5bde, /dev/disk/by-partlabel/EFI\x20System\x20Partition, /dev/disk/by-id/nvme-WDC_PC_SN530_SDBPNPZ-256G-1002_21205D807676-part1, /dev/disk/by-uuid/41BE-023F, /dev/disk/by-id/nvme-eui.e8238fa6bf530001001b448b48fca953-part1, /dev/disk/by-id/nvme-WDC_PC_SN530_SDBPNPZ-256G-1002_21205D807676_1-part1
+  links: /dev/disk/by-partlabel/EFI\x20System\x20Partition, /dev/disk/by-id/nvme-WDC_PC_SN530_SDBPNPZ-256G-1002_21205D807676-part1, /dev/disk/by-id/nvme-eui.e8238fa6bf530001001b448b48fca953-part1, /dev/disk/by-path/pci-0000:00:0e.0-pci-10000:e1:00.0-nvme-1-part1, /dev/disk/by-partuuid/61e6ad9c-ee4a-4a9d-9bb4-9c9fc63f5bde, /dev/disk/by-id/nvme-WDC_PC_SN530_SDBPNPZ-256G-1002_21205D807676_1-part1, /dev/disk/by-uuid/41BE-023F
 /devices/pci0000:00/0000:00:0e.0/pci10000:e0/10000:e0:1c.4/10000:e1:00.0/nvme/nvme0/nvme0n1/nvme0n1p2
   name: /dev/nvme0n1p2
-  links: /dev/disk/by-id/nvme-WDC_PC_SN530_SDBPNPZ-256G-1002_21205D807676-part2, /dev/disk/by-path/pci-0000:00:0e.0-pci-10000:e1:00.0-nvme-1-part2, /dev/disk/by-id/nvme-eui.e8238fa6bf530001001b448b48fca953-part2, /dev/disk/by-uuid/2c6e77bb-d3b9-47ba-a4e4-46b6a68b34de, /dev/disk/by-id/nvme-WDC_PC_SN530_SDBPNPZ-256G-1002_21205D807676_1-part2, /dev/disk/by-partuuid/7cb4f0d1-2662-49b3-98b2-66c2d29a13ab
+  links: /dev/disk/by-id/nvme-WDC_PC_SN530_SDBPNPZ-256G-1002_21205D807676_1-part2, /dev/disk/by-path/pci-0000:00:0e.0-pci-10000:e1:00.0-nvme-1-part2, /dev/disk/by-partuuid/7cb4f0d1-2662-49b3-98b2-66c2d29a13ab, /dev/disk/by-id/nvme-WDC_PC_SN530_SDBPNPZ-256G-1002_21205D807676-part2, /dev/disk/by-id/nvme-eui.e8238fa6bf530001001b448b48fca953-part2, /dev/disk/by-uuid/2c6e77bb-d3b9-47ba-a4e4-46b6a68b34de
 /devices/pci0000:00/0000:00:0e.0/pci10000:e0/10000:e0:1c.4/pci_bus/10000:e1
 /devices/pci0000:00/0000:00:0e.0/pci10000:e0/pci_bus/10000:e0
 /devices/pci0000:00/0000:00:14.0
@@ -11999,10 +11999,10 @@ udev link /dev/input/by-path/pci-0000:00:15.1-platform-i2c_designware.1-mouse po
 /devices/pci0000:00/0000:00:14.0/usb1/1-1/1-1:1.0/0003:046D:C077.0002/input/input6
 /devices/pci0000:00/0000:00:14.0/usb1/1-1/1-1:1.0/0003:046D:C077.0002/input/input6/event6
   name: /dev/input/event6
-  links: /dev/input/by-path/pci-0000:00:14.0-usb-0:1:1.0-event-mouse, /dev/input/by-id/usb-Logitech_USB_Optical_Mouse-event-mouse
+  links: /dev/input/by-id/usb-Logitech_USB_Optical_Mouse-event-mouse, /dev/input/by-path/pci-0000:00:14.0-usb-0:1:1.0-event-mouse
 /devices/pci0000:00/0000:00:14.0/usb1/1-1/1-1:1.0/0003:046D:C077.0002/input/input6/mouse2
   name: /dev/input/mouse2
-  links: /dev/input/by-id/usb-Logitech_USB_Optical_Mouse-mouse, /dev/input/by-path/pci-0000:00:14.0-usb-0:1:1.0-mouse
+  links: /dev/input/by-path/pci-0000:00:14.0-usb-0:1:1.0-mouse, /dev/input/by-id/usb-Logitech_USB_Optical_Mouse-mouse
 /devices/pci0000:00/0000:00:14.0/usb1/1-10
   name: /dev/bus/usb/001/004
 /devices/pci0000:00/0000:00:14.0/usb1/1-10/1-10:1.0
@@ -12016,10 +12016,10 @@ udev link /dev/input/by-path/pci-0000:00:15.1-platform-i2c_designware.1-mouse po
   name: /dev/media0
 /devices/pci0000:00/0000:00:14.0/usb1/1-3/1-3:1.0/video4linux/video0
   name: /dev/video0
-  links: /dev/v4l/by-path/pci-0000:00:14.0-usb-0:3:1.0-video-index0, /dev/v4l/by-id/usb-Azurewave_USB2.0_VGA_UVC_WebCam-video-index0
+  links: /dev/v4l/by-id/usb-Azurewave_USB2.0_VGA_UVC_WebCam-video-index0, /dev/v4l/by-path/pci-0000:00:14.0-usb-0:3:1.0-video-index0
 /devices/pci0000:00/0000:00:14.0/usb1/1-3/1-3:1.0/video4linux/video1
   name: /dev/video1
-  links: /dev/v4l/by-id/usb-Azurewave_USB2.0_VGA_UVC_WebCam-video-index1, /dev/v4l/by-path/pci-0000:00:14.0-usb-0:3:1.0-video-index1
+  links: /dev/v4l/by-path/pci-0000:00:14.0-usb-0:3:1.0-video-index1, /dev/v4l/by-id/usb-Azurewave_USB2.0_VGA_UVC_WebCam-video-index1
 /devices/pci0000:00/0000:00:14.0/usb1/1-3/1-3:1.1
 /devices/pci0000:00/0000:00:14.0/usb2
   name: /dev/bus/usb/002/001
@@ -12979,7 +12979,7 @@ udev link /dev/input/by-path/pci-0000:00:15.1-platform-i2c_designware.1-mouse po
   snd_pcm_dmaengine 16384 1 snd_soc_core, Live 0x0000000000000000
   intel_tcc_cooling 12288 0 - Live 0x0000000000000000
   x86_pkg_temp_thermal 20480 0 - Live 0x0000000000000000
-  snd_hda_intel 61440 3 - Live 0x0000000000000000
+  snd_hda_intel 61440 5 - Live 0x0000000000000000
   intel_powerclamp 24576 0 - Live 0x0000000000000000
   snd_intel_dspcfg 32768 3 snd_sof_intel_hda_common,snd_sof,snd_hda_intel, Live 0x0000000000000000
   coretemp 24576 0 - Live 0x0000000000000000
@@ -12991,7 +12991,7 @@ udev link /dev/input/by-path/pci-0000:00:15.1-platform-i2c_designware.1-mouse po
   snd_hwdep 20480 1 snd_hda_codec, Live 0x0000000000000000
   joydev 32768 0 - Live 0x0000000000000000
   kvm 1409024 1 kvm_intel, Live 0x0000000000000000
-  snd_pcm 196608 11 snd_hda_codec_hdmi,snd_sof_intel_hda_common,soundwire_intel,snd_sof,snd_sof_utils,snd_soc_core,snd_compress,snd_pcm_dmaengine,snd_hda_intel,snd_hda_codec,snd_hda_core, Live 0x0000000000000000
+  snd_pcm 196608 12 snd_hda_codec_hdmi,snd_sof_intel_hda_common,soundwire_intel,snd_sof,snd_sof_utils,snd_soc_core,snd_compress,snd_pcm_dmaengine,snd_hda_intel,snd_hda_codec,snd_hda_core, Live 0x0000000000000000
   iwlmvm 843776 0 - Live 0x0000000000000000
   irqbypass 12288 1 kvm, Live 0x0000000000000000
   crct10dif_pclmul 12288 1 - Live 0x0000000000000000
@@ -13006,7 +13006,7 @@ udev link /dev/input/by-path/pci-0000:00:15.1-platform-i2c_designware.1-mouse po
   mei_hdcp 28672 0 - Live 0x0000000000000000
   pmt_class 16384 1 pmt_telemetry, Live 0x0000000000000000
   intel_rapl_msr 20480 0 - Live 0x0000000000000000
-  i915 4157440 31 - Live 0x0000000000000000
+  i915 4157440 33 - Live 0x0000000000000000
   nls_iso8859_1 12288 1 - Live 0x0000000000000000
   sha1_ssse3 32768 0 - Live 0x0000000000000000
   mac80211 1720320 1 iwlmvm, Live 0x0000000000000000
@@ -13041,7 +13041,7 @@ udev link /dev/input/by-path/pci-0000:00:15.1-platform-i2c_designware.1-mouse po
   bluetooth 1081344 34 rfcomm,bnep,btusb,btrtl,btbcm,btintel,btmtk, Live 0x0000000000000000
   cmdlinepart 12288 0 - Live 0x0000000000000000
   processor_thermal_rfim 32768 1 processor_thermal_device, Live 0x0000000000000000
-  snd 143360 20 snd_hda_codec_hdmi,snd_sof,snd_hda_codec_realtek,snd_hda_codec_generic,snd_soc_core,snd_compress,snd_hda_intel,snd_hda_codec,snd_hwdep,snd_pcm,snd_rawmidi,snd_seq,snd_seq_device,snd_timer, Live 0x0000000000000000
+  snd 143360 23 snd_hda_codec_hdmi,snd_sof,snd_hda_codec_realtek,snd_hda_codec_generic,snd_soc_core,snd_compress,snd_hda_intel,snd_hda_codec,snd_hwdep,snd_pcm,snd_rawmidi,snd_seq,snd_seq_device,snd_timer, Live 0x0000000000000000
   cec 94208 2 i915,drm_display_helper, Live 0x0000000000000000
   videobuf2_common 86016 4 uvcvideo,videobuf2_vmalloc,videobuf2_memops,videobuf2_v4l2, Live 0x0000000000000000
   spi_nor 135168 0 - Live 0x0000000000000000
@@ -13250,7 +13250,7 @@ udev link /dev/input/by-path/pci-0000:00:15.1-platform-i2c_designware.1-mouse po
   Driver: "intel-lpss"
   Driver Modules: "intel_lpss_pci"
   Memory Range: 0x4017001000-0x4017001fff (rw,non-prefetchable)
-  IRQ: 40 (39194 events)
+  IRQ: 40 (46603 events)
   Module Alias: "pci:v00008086d0000A0E9sv00001043sd000017D2bc0Csc80i00"
   Driver Info #0:
     Driver Status: intel_lpss_pci is active
@@ -13446,7 +13446,7 @@ udev link /dev/input/by-path/pci-0000:00:15.1-platform-i2c_designware.1-mouse po
   Driver Modules: "snd_hda_intel"
   Memory Range: 0x6003238000-0x600323bfff (rw,non-prefetchable)
   Memory Range: 0x6003000000-0x60030fffff (rw,non-prefetchable)
-  IRQ: 166 (5813 events)
+  IRQ: 166 (6491 events)
   Module Alias: "pci:v00008086d0000A0C8sv00001043sd0000102Fbc04sc03i80"
   Driver Info #0:
     Driver Status: snd_hda_intel is active
@@ -13592,7 +13592,7 @@ udev link /dev/input/by-path/pci-0000:00:15.1-platform-i2c_designware.1-mouse po
   Memory Range: 0x4000000000-0x400fffffff (ro,non-prefetchable)
   I/O Ports: 0x3000-0x303f (rw)
   Memory Range: 0x000c0000-0x000dffff (rw,non-prefetchable,disabled)
-  IRQ: 165 (2139034 events)
+  IRQ: 165 (2283897 events)
   Module Alias: "pci:v00008086d00009A49sv00001043sd000015CCbc03sc00i00"
   Driver Info #0:
     Driver Status: i915 is active
@@ -13638,7 +13638,7 @@ udev link /dev/input/by-path/pci-0000:00:15.1-platform-i2c_designware.1-mouse po
   Driver: "xhci_hcd"
   Driver Modules: "xhci_pci"
   Memory Range: 0x6003220000-0x600322ffff (rw,non-prefetchable)
-  IRQ: 142 (118756 events)
+  IRQ: 142 (134533 events)
   Module Alias: "pci:v00008086d0000A0EDsv00001043sd0000201Fbc0Csc03i30"
   Driver Info #0:
     Driver Status: xhci_pci is active
@@ -13723,7 +13723,7 @@ udev link /dev/input/by-path/pci-0000:00:15.1-platform-i2c_designware.1-mouse po
   Driver: "nvme"
   Driver Modules: "nvme"
   Device File: /dev/nvme0n1
-  Device Files: /dev/nvme0n1, /dev/disk/by-id/nvme-eui.e8238fa6bf530001001b448b48fca953, /dev/disk/by-id/nvme-WDC_PC_SN530_SDBPNPZ-256G-1002_21205D807676, /dev/disk/by-id/nvme-WDC_PC_SN530_SDBPNPZ-256G-1002_21205D807676_1, /dev/disk/by-path/pci-0000:00:0e.0-pci-10000:e1:00.0-nvme-1
+  Device Files: /dev/nvme0n1, /dev/disk/by-id/nvme-WDC_PC_SN530_SDBPNPZ-256G-1002_21205D807676, /dev/disk/by-path/pci-0000:00:0e.0-pci-10000:e1:00.0-nvme-1, /dev/disk/by-id/nvme-eui.e8238fa6bf530001001b448b48fca953, /dev/disk/by-id/nvme-WDC_PC_SN530_SDBPNPZ-256G-1002_21205D807676_1
   Device Number: block 259:0
   BIOS id: 0x80
   Drive status: no medium
@@ -13738,7 +13738,7 @@ udev link /dev/input/by-path/pci-0000:00:15.1-platform-i2c_designware.1-mouse po
   Hardware Class: partition
   Model: "Partition"
   Device File: /dev/nvme0n1p1
-  Device Files: /dev/nvme0n1p1, /dev/disk/by-path/pci-0000:00:0e.0-pci-10000:e1:00.0-nvme-1-part1, /dev/disk/by-partuuid/61e6ad9c-ee4a-4a9d-9bb4-9c9fc63f5bde, /dev/disk/by-partlabel/EFI\x20System\x20Partition, /dev/disk/by-id/nvme-WDC_PC_SN530_SDBPNPZ-256G-1002_21205D807676-part1, /dev/disk/by-uuid/41BE-023F, /dev/disk/by-id/nvme-eui.e8238fa6bf530001001b448b48fca953-part1, /dev/disk/by-id/nvme-WDC_PC_SN530_SDBPNPZ-256G-1002_21205D807676_1-part1
+  Device Files: /dev/nvme0n1p1, /dev/disk/by-partlabel/EFI\x20System\x20Partition, /dev/disk/by-id/nvme-WDC_PC_SN530_SDBPNPZ-256G-1002_21205D807676-part1, /dev/disk/by-id/nvme-eui.e8238fa6bf530001001b448b48fca953-part1, /dev/disk/by-path/pci-0000:00:0e.0-pci-10000:e1:00.0-nvme-1-part1, /dev/disk/by-partuuid/61e6ad9c-ee4a-4a9d-9bb4-9c9fc63f5bde, /dev/disk/by-id/nvme-WDC_PC_SN530_SDBPNPZ-256G-1002_21205D807676_1-part1, /dev/disk/by-uuid/41BE-023F
   Config Status: cfg=new, avail=yes, need=no, active=unknown
   Attached to: #41 (Disk)
 
@@ -13750,7 +13750,7 @@ udev link /dev/input/by-path/pci-0000:00:15.1-platform-i2c_designware.1-mouse po
   Hardware Class: partition
   Model: "Partition"
   Device File: /dev/nvme0n1p2
-  Device Files: /dev/nvme0n1p2, /dev/disk/by-id/nvme-WDC_PC_SN530_SDBPNPZ-256G-1002_21205D807676-part2, /dev/disk/by-path/pci-0000:00:0e.0-pci-10000:e1:00.0-nvme-1-part2, /dev/disk/by-id/nvme-eui.e8238fa6bf530001001b448b48fca953-part2, /dev/disk/by-uuid/2c6e77bb-d3b9-47ba-a4e4-46b6a68b34de, /dev/disk/by-id/nvme-WDC_PC_SN530_SDBPNPZ-256G-1002_21205D807676_1-part2, /dev/disk/by-partuuid/7cb4f0d1-2662-49b3-98b2-66c2d29a13ab
+  Device Files: /dev/nvme0n1p2, /dev/disk/by-id/nvme-WDC_PC_SN530_SDBPNPZ-256G-1002_21205D807676_1-part2, /dev/disk/by-path/pci-0000:00:0e.0-pci-10000:e1:00.0-nvme-1-part2, /dev/disk/by-partuuid/7cb4f0d1-2662-49b3-98b2-66c2d29a13ab, /dev/disk/by-id/nvme-WDC_PC_SN530_SDBPNPZ-256G-1002_21205D807676-part2, /dev/disk/by-id/nvme-eui.e8238fa6bf530001001b448b48fca953-part2, /dev/disk/by-uuid/2c6e77bb-d3b9-47ba-a4e4-46b6a68b34de
   Config Status: cfg=new, avail=yes, need=no, active=unknown
   Attached to: #41 (Disk)
 
@@ -13834,7 +13834,7 @@ udev link /dev/input/by-path/pci-0000:00:15.1-platform-i2c_designware.1-mouse po
   Driver: "usbhid"
   Driver Modules: "usbhid"
   Device File: /dev/input/mice (/dev/input/mouse2)
-  Device Files: /dev/input/mice, /dev/input/mouse2, /dev/input/event6, /dev/input/by-path/pci-0000:00:14.0-usb-0:1:1.0-event-mouse, /dev/input/by-id/usb-Logitech_USB_Optical_Mouse-event-mouse, /dev/input/by-id/usb-Logitech_USB_Optical_Mouse-mouse, /dev/input/by-path/pci-0000:00:14.0-usb-0:1:1.0-mouse
+  Device Files: /dev/input/mice, /dev/input/mouse2, /dev/input/event6, /dev/input/by-id/usb-Logitech_USB_Optical_Mouse-event-mouse, /dev/input/by-path/pci-0000:00:14.0-usb-0:1:1.0-event-mouse, /dev/input/by-path/pci-0000:00:14.0-usb-0:1:1.0-mouse, /dev/input/by-id/usb-Logitech_USB_Optical_Mouse-mouse
   Device Number: char 13:63 (char 13:34)
   Speed: 1.5 Mbps
   Module Alias: "usb:v046DpC077d7200dc00dsc00dp00ic03isc01ip02in00"
@@ -13924,7 +13924,7 @@ udev link /dev/input/by-path/pci-0000:00:15.1-platform-i2c_designware.1-mouse po
   Vendor: "GenuineIntel"
   Model: 6.140.1 "11th Gen Intel(R) Core(TM) i5-1135G7 @ 2.40GHz"
   Features: fpu,vme,de,pse,tsc,msr,pae,mce,cx8,apic,sep,mtrr,pge,mca,cmov,pat,pse36,clflush,dts,acpi,mmx,fxsr,sse,sse2,ss,ht,tm,pbe,syscall,nx,pdpe1gb,rdtscp,lm,constant_tsc,art,arch_perfmon,pebs,bts,rep_good,nopl,xtopology,nonstop_tsc,cpuid,aperfmperf,tsc_known_freq,pni,pclmulqdq,dtes64,monitor,ds_cpl,vmx,est,tm2,ssse3,sdbg,fma,cx16,xtpr,pdcm,pcid,sse4_1,sse4_2,x2apic,movbe,popcnt,tsc_deadline_timer,aes,xsave,avx,f16c,rdrand,lahf_lm,abm,3dnowprefetch,cpuid_fault,epb,cat_l2,invpcid_single,cdp_l2,ssbd,ibrs,ibpb,stibp,ibrs_enhanced,tpr_shadow,flexpriority,ept,vpid,ept_ad,fsgsbase,tsc_adjust,bmi1,avx2,smep,bmi2,erms,invpcid,rdt_a,avx512f,avx512dq,rdseed,adx,smap,avx512ifma,clflushopt,clwb,intel_pt,avx512cd,sha_ni,avx512bw,avx512vl,xsaveopt,xsavec,xgetbv1,xsaves,split_lock_detect,dtherm,ida,arat,pln,pts,hwp,hwp_notify,hwp_act_window,hwp_epp,hwp_pkg_req,vnmi,avx512vbmi,umip,pku,ospke,avx512_vbmi2,gfni,vaes,vpclmulqdq,avx512_vnni,avx512_bitalg,avx512_vpopcntdq,rdpid,movdiri,movdir64b,fsrm,avx512_vp2intersect,md_clear,ibt,flus
-  Clock: 1907 MHz
+  Clock: 3814 MHz
   BogoMips: 4838.40
   Cache: 8192 kb
   Units/Processor: 16
@@ -13938,7 +13938,7 @@ udev link /dev/input/by-path/pci-0000:00:15.1-platform-i2c_designware.1-mouse po
   Vendor: "GenuineIntel"
   Model: 6.140.1 "11th Gen Intel(R) Core(TM) i5-1135G7 @ 2.40GHz"
   Features: fpu,vme,de,pse,tsc,msr,pae,mce,cx8,apic,sep,mtrr,pge,mca,cmov,pat,pse36,clflush,dts,acpi,mmx,fxsr,sse,sse2,ss,ht,tm,pbe,syscall,nx,pdpe1gb,rdtscp,lm,constant_tsc,art,arch_perfmon,pebs,bts,rep_good,nopl,xtopology,nonstop_tsc,cpuid,aperfmperf,tsc_known_freq,pni,pclmulqdq,dtes64,monitor,ds_cpl,vmx,est,tm2,ssse3,sdbg,fma,cx16,xtpr,pdcm,pcid,sse4_1,sse4_2,x2apic,movbe,popcnt,tsc_deadline_timer,aes,xsave,avx,f16c,rdrand,lahf_lm,abm,3dnowprefetch,cpuid_fault,epb,cat_l2,invpcid_single,cdp_l2,ssbd,ibrs,ibpb,stibp,ibrs_enhanced,tpr_shadow,flexpriority,ept,vpid,ept_ad,fsgsbase,tsc_adjust,bmi1,avx2,smep,bmi2,erms,invpcid,rdt_a,avx512f,avx512dq,rdseed,adx,smap,avx512ifma,clflushopt,clwb,intel_pt,avx512cd,sha_ni,avx512bw,avx512vl,xsaveopt,xsavec,xgetbv1,xsaves,split_lock_detect,dtherm,ida,arat,pln,pts,hwp,hwp_notify,hwp_act_window,hwp_epp,hwp_pkg_req,vnmi,avx512vbmi,umip,pku,ospke,avx512_vbmi2,gfni,vaes,vpclmulqdq,avx512_vnni,avx512_bitalg,avx512_vpopcntdq,rdpid,movdiri,movdir64b,fsrm,avx512_vp2intersect,md_clear,ibt,flus
-  Clock: 3063 MHz
+  Clock: 3646 MHz
   BogoMips: 4838.40
   Cache: 8192 kb
   Units/Processor: 16
@@ -13952,7 +13952,7 @@ udev link /dev/input/by-path/pci-0000:00:15.1-platform-i2c_designware.1-mouse po
   Vendor: "GenuineIntel"
   Model: 6.140.1 "11th Gen Intel(R) Core(TM) i5-1135G7 @ 2.40GHz"
   Features: fpu,vme,de,pse,tsc,msr,pae,mce,cx8,apic,sep,mtrr,pge,mca,cmov,pat,pse36,clflush,dts,acpi,mmx,fxsr,sse,sse2,ss,ht,tm,pbe,syscall,nx,pdpe1gb,rdtscp,lm,constant_tsc,art,arch_perfmon,pebs,bts,rep_good,nopl,xtopology,nonstop_tsc,cpuid,aperfmperf,tsc_known_freq,pni,pclmulqdq,dtes64,monitor,ds_cpl,vmx,est,tm2,ssse3,sdbg,fma,cx16,xtpr,pdcm,pcid,sse4_1,sse4_2,x2apic,movbe,popcnt,tsc_deadline_timer,aes,xsave,avx,f16c,rdrand,lahf_lm,abm,3dnowprefetch,cpuid_fault,epb,cat_l2,invpcid_single,cdp_l2,ssbd,ibrs,ibpb,stibp,ibrs_enhanced,tpr_shadow,flexpriority,ept,vpid,ept_ad,fsgsbase,tsc_adjust,bmi1,avx2,smep,bmi2,erms,invpcid,rdt_a,avx512f,avx512dq,rdseed,adx,smap,avx512ifma,clflushopt,clwb,intel_pt,avx512cd,sha_ni,avx512bw,avx512vl,xsaveopt,xsavec,xgetbv1,xsaves,split_lock_detect,dtherm,ida,arat,pln,pts,hwp,hwp_notify,hwp_act_window,hwp_epp,hwp_pkg_req,vnmi,avx512vbmi,umip,pku,ospke,avx512_vbmi2,gfni,vaes,vpclmulqdq,avx512_vnni,avx512_bitalg,avx512_vpopcntdq,rdpid,movdiri,movdir64b,fsrm,avx512_vp2intersect,md_clear,ibt,flus
-  Clock: 850 MHz
+  Clock: 760 MHz
   BogoMips: 4838.40
   Cache: 8192 kb
   Units/Processor: 16
@@ -13966,7 +13966,7 @@ udev link /dev/input/by-path/pci-0000:00:15.1-platform-i2c_designware.1-mouse po
   Vendor: "GenuineIntel"
   Model: 6.140.1 "11th Gen Intel(R) Core(TM) i5-1135G7 @ 2.40GHz"
   Features: fpu,vme,de,pse,tsc,msr,pae,mce,cx8,apic,sep,mtrr,pge,mca,cmov,pat,pse36,clflush,dts,acpi,mmx,fxsr,sse,sse2,ss,ht,tm,pbe,syscall,nx,pdpe1gb,rdtscp,lm,constant_tsc,art,arch_perfmon,pebs,bts,rep_good,nopl,xtopology,nonstop_tsc,cpuid,aperfmperf,tsc_known_freq,pni,pclmulqdq,dtes64,monitor,ds_cpl,vmx,est,tm2,ssse3,sdbg,fma,cx16,xtpr,pdcm,pcid,sse4_1,sse4_2,x2apic,movbe,popcnt,tsc_deadline_timer,aes,xsave,avx,f16c,rdrand,lahf_lm,abm,3dnowprefetch,cpuid_fault,epb,cat_l2,invpcid_single,cdp_l2,ssbd,ibrs,ibpb,stibp,ibrs_enhanced,tpr_shadow,flexpriority,ept,vpid,ept_ad,fsgsbase,tsc_adjust,bmi1,avx2,smep,bmi2,erms,invpcid,rdt_a,avx512f,avx512dq,rdseed,adx,smap,avx512ifma,clflushopt,clwb,intel_pt,avx512cd,sha_ni,avx512bw,avx512vl,xsaveopt,xsavec,xgetbv1,xsaves,split_lock_detect,dtherm,ida,arat,pln,pts,hwp,hwp_notify,hwp_act_window,hwp_epp,hwp_pkg_req,vnmi,avx512vbmi,umip,pku,ospke,avx512_vbmi2,gfni,vaes,vpclmulqdq,avx512_vnni,avx512_bitalg,avx512_vpopcntdq,rdpid,movdiri,movdir64b,fsrm,avx512_vp2intersect,md_clear,ibt,flus
-  Clock: 1041 MHz
+  Clock: 3742 MHz
   BogoMips: 4838.40
   Cache: 8192 kb
   Units/Processor: 16
@@ -13980,7 +13980,7 @@ udev link /dev/input/by-path/pci-0000:00:15.1-platform-i2c_designware.1-mouse po
   Vendor: "GenuineIntel"
   Model: 6.140.1 "11th Gen Intel(R) Core(TM) i5-1135G7 @ 2.40GHz"
   Features: fpu,vme,de,pse,tsc,msr,pae,mce,cx8,apic,sep,mtrr,pge,mca,cmov,pat,pse36,clflush,dts,acpi,mmx,fxsr,sse,sse2,ss,ht,tm,pbe,syscall,nx,pdpe1gb,rdtscp,lm,constant_tsc,art,arch_perfmon,pebs,bts,rep_good,nopl,xtopology,nonstop_tsc,cpuid,aperfmperf,tsc_known_freq,pni,pclmulqdq,dtes64,monitor,ds_cpl,vmx,est,tm2,ssse3,sdbg,fma,cx16,xtpr,pdcm,pcid,sse4_1,sse4_2,x2apic,movbe,popcnt,tsc_deadline_timer,aes,xsave,avx,f16c,rdrand,lahf_lm,abm,3dnowprefetch,cpuid_fault,epb,cat_l2,invpcid_single,cdp_l2,ssbd,ibrs,ibpb,stibp,ibrs_enhanced,tpr_shadow,flexpriority,ept,vpid,ept_ad,fsgsbase,tsc_adjust,bmi1,avx2,smep,bmi2,erms,invpcid,rdt_a,avx512f,avx512dq,rdseed,adx,smap,avx512ifma,clflushopt,clwb,intel_pt,avx512cd,sha_ni,avx512bw,avx512vl,xsaveopt,xsavec,xgetbv1,xsaves,split_lock_detect,dtherm,ida,arat,pln,pts,hwp,hwp_notify,hwp_act_window,hwp_epp,hwp_pkg_req,vnmi,avx512vbmi,umip,pku,ospke,avx512_vbmi2,gfni,vaes,vpclmulqdq,avx512_vnni,avx512_bitalg,avx512_vpopcntdq,rdpid,movdiri,movdir64b,fsrm,avx512_vp2intersect,md_clear,ibt,flus
-  Clock: 437 MHz
+  Clock: 3800 MHz
   BogoMips: 4838.40
   Cache: 8192 kb
   Units/Processor: 16
@@ -14008,7 +14008,7 @@ udev link /dev/input/by-path/pci-0000:00:15.1-platform-i2c_designware.1-mouse po
   Vendor: "GenuineIntel"
   Model: 6.140.1 "11th Gen Intel(R) Core(TM) i5-1135G7 @ 2.40GHz"
   Features: fpu,vme,de,pse,tsc,msr,pae,mce,cx8,apic,sep,mtrr,pge,mca,cmov,pat,pse36,clflush,dts,acpi,mmx,fxsr,sse,sse2,ss,ht,tm,pbe,syscall,nx,pdpe1gb,rdtscp,lm,constant_tsc,art,arch_perfmon,pebs,bts,rep_good,nopl,xtopology,nonstop_tsc,cpuid,aperfmperf,tsc_known_freq,pni,pclmulqdq,dtes64,monitor,ds_cpl,vmx,est,tm2,ssse3,sdbg,fma,cx16,xtpr,pdcm,pcid,sse4_1,sse4_2,x2apic,movbe,popcnt,tsc_deadline_timer,aes,xsave,avx,f16c,rdrand,lahf_lm,abm,3dnowprefetch,cpuid_fault,epb,cat_l2,invpcid_single,cdp_l2,ssbd,ibrs,ibpb,stibp,ibrs_enhanced,tpr_shadow,flexpriority,ept,vpid,ept_ad,fsgsbase,tsc_adjust,bmi1,avx2,smep,bmi2,erms,invpcid,rdt_a,avx512f,avx512dq,rdseed,adx,smap,avx512ifma,clflushopt,clwb,intel_pt,avx512cd,sha_ni,avx512bw,avx512vl,xsaveopt,xsavec,xgetbv1,xsaves,split_lock_detect,dtherm,ida,arat,pln,pts,hwp,hwp_notify,hwp_act_window,hwp_epp,hwp_pkg_req,vnmi,avx512vbmi,umip,pku,ospke,avx512_vbmi2,gfni,vaes,vpclmulqdq,avx512_vnni,avx512_bitalg,avx512_vpopcntdq,rdpid,movdiri,movdir64b,fsrm,avx512_vp2intersect,md_clear,ibt,flus
-  Clock: 883 MHz
+  Clock: 3450 MHz
   BogoMips: 4838.40
   Cache: 8192 kb
   Units/Processor: 16
@@ -14022,7 +14022,7 @@ udev link /dev/input/by-path/pci-0000:00:15.1-platform-i2c_designware.1-mouse po
   Vendor: "GenuineIntel"
   Model: 6.140.1 "11th Gen Intel(R) Core(TM) i5-1135G7 @ 2.40GHz"
   Features: fpu,vme,de,pse,tsc,msr,pae,mce,cx8,apic,sep,mtrr,pge,mca,cmov,pat,pse36,clflush,dts,acpi,mmx,fxsr,sse,sse2,ss,ht,tm,pbe,syscall,nx,pdpe1gb,rdtscp,lm,constant_tsc,art,arch_perfmon,pebs,bts,rep_good,nopl,xtopology,nonstop_tsc,cpuid,aperfmperf,tsc_known_freq,pni,pclmulqdq,dtes64,monitor,ds_cpl,vmx,est,tm2,ssse3,sdbg,fma,cx16,xtpr,pdcm,pcid,sse4_1,sse4_2,x2apic,movbe,popcnt,tsc_deadline_timer,aes,xsave,avx,f16c,rdrand,lahf_lm,abm,3dnowprefetch,cpuid_fault,epb,cat_l2,invpcid_single,cdp_l2,ssbd,ibrs,ibpb,stibp,ibrs_enhanced,tpr_shadow,flexpriority,ept,vpid,ept_ad,fsgsbase,tsc_adjust,bmi1,avx2,smep,bmi2,erms,invpcid,rdt_a,avx512f,avx512dq,rdseed,adx,smap,avx512ifma,clflushopt,clwb,intel_pt,avx512cd,sha_ni,avx512bw,avx512vl,xsaveopt,xsavec,xgetbv1,xsaves,split_lock_detect,dtherm,ida,arat,pln,pts,hwp,hwp_notify,hwp_act_window,hwp_epp,hwp_pkg_req,vnmi,avx512vbmi,umip,pku,ospke,avx512_vbmi2,gfni,vaes,vpclmulqdq,avx512_vnni,avx512_bitalg,avx512_vpopcntdq,rdpid,movdiri,movdir64b,fsrm,avx512_vp2intersect,md_clear,ibt,flus
-  Clock: 656 MHz
+  Clock: 1510 MHz
   BogoMips: 4838.40
   Cache: 8192 kb
   Units/Processor: 16
