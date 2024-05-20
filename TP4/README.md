@@ -104,3 +104,21 @@ lsmod | grep Módulo
 ## El sistema de ficheros /proc
 
 En Linux, hay un mecanismo adicional para que el kernel y los módulos del kernel envíen información a los procesos: el sistema de archivos /proc el cual fue originalmente diseñado para permitir un fácil acceso a la información sobre los procesos (De allí su nombre).
+
+Su funcionamiento es muy similar al utilizado con los controladores de dispositivos: se crea una estructura con toda la información necesaria para el archivo /proc, incluidos los punteros a cualquier función de controlador (en nuestro caso, solo uno, el que se llama cuando alguien intenta leer desde el archivo /proc). Luego, init_module registra la estructura con el kernel y cleanup_module la elimina.
+
+A diferencia de un sistema de archivos convencional que almacena archivos en el disco, /proc almacena información en la memoria RAM y se genera dinámicamente por el kernel. Algunas de los archivos de /proc más utilizados son: 
+
+- **cpuinfo y meminfo:** El primero proporciona información detallada sobre el procesador tales como fabricante, modelo, velocidad y características. El segundo muestra información de la memoria del sistema, incluyendo la memoria física total, libre y utilizada.
+
+
+
+- **loadavg:** Muestra el promedio de carga del sistema en diferentes intervalos de tiempo, lo que nos permite monitorear la carga del sistema y la utilización de recursos.
+
+
+- **partitions:** Proporciona una lista las particiones de disco en el sistema, incluyendo información como el tamaño de las particiones y el tipo de sistema de archivos.
+
+- **version:** Muestra información sobre la versión del kernel de Linux que está siendo ejecutada en el sistema, así como también información adicional sobre la configuración del kernel.
+
+
+- **net:** Proporciona información sobre el estado de las conexiones de red del sistema. En particular, el archivo /proc/net/tcp nos muestra información detallada sobre las conexiones TCP activas, como las direcciones IP y puertos locales y remotos, el estado de la conexión y el número de identificación del proceso (PID) asociado. 
