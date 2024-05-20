@@ -16,3 +16,91 @@ El segundo comando permite instalar el código fuente del kernel de Linux para p
 
 ![alt text](img/pp2.png)
 
+#### Instalación de Headers
+
+Para construir software que interactúe con el kernel, como módulos del kernel o programas de usuario que hagan uso de las llamadas al sistema del kernel, es necesario tener instalados los "headers" correspondientes al kernel en uso. Estos "headers" proporcionan las definiciones necesarias para que el compilador pueda operar correctamente el software y establecer la comunicación adecuada con el kernel.
+
+![alt text](<img/Headers 1.png>)
+
+![alt text](<img/Headers 2.png>)
+
+## Mi primer módulo
+
+Generamos el siguiente archivo .c que servirá como primer módulo.
+
+```c 
+
+/* 
+* hello-1.c - The simplest kernel module. 
+*/ 
+#include <linux/module.h> /* Needed by all modules */ 
+#include <linux/printk.h> /* Needed for pr_info() */ 
+ 
+int init_module(void) 
+{ 
+    pr_info("Hello world 1.\n"); 
+ 
+    /* A non 0 return means init_module failed; module can't be loaded. */ 
+    return 0; 
+} 
+ 
+void cleanup_module(void) 
+{ 
+    pr_info("Goodbye world 1.\n"); 
+} 
+ 
+20MODULE_LICENSE("GPL");
+```
+También necesitaremos el makefile correspondiente para compilar nuestro módulo.
+
+```sh
+obj-m += hello-1.o 
+ 
+PWD := $(CURDIR) 
+ 
+all: 
+    make -C /lib/modules/$(shell uname -r)/build M=$(PWD) modules 
+ 
+clean: 
+    make -C /lib/modules/$(shell uname -r)/build M=$(PWD) clean
+
+```
+Estos archivos deben ejecutarse desde el directorio **/Desktop/**.
+
+#### Generación, añadido del módulo de Kernel
+
+Generamos los archivos mediante el Makefile anteriormente mostrado con el siguiente comando:
+
+![alt text](<img/Gen kernel 1.png>)
+
+![alt text](<img/Gen kernel 2.png>)
+
+Se consigue la información del archivo mediante el siguiente comando:
+
+```sh
+modinfo Módulo.ko
+```
+
+Se comparan las características para las dos computadores de los integrantes del grupo.
+
+![alt text](<img/Gen kernel 3.png>)
+
+![alt text](<img/modinfo 2.png>)
+
+Los archivos generados con el archivo “Makefile” los cuales tienen extensión .ko (kernel object) son módulos del kernel. Se observa que la única diferencia entre los mismos es el campo denominado “vermagic”. Este campo muestra el nombre de la versión exacta del kernel con la que el módulo fué compilado. Para el primer caso tenemos la versión 5.15.0-106-generic SMP mod_unload modversions, mientras que para el segundo se tiene la versión 6.5.0-35-generic SMP preempt mod_unload modversions. Ambas versiones de kernel soportan SMP (Symmetric Multiprocessing). Para el caso 2 tenemos que esta versión es preemptible, lo que significa que el kernel puede suspender la ejecución de una tarea en modo kernel (mientras se está ejecutando código del mismo) para permitir que otra tarea con mayor prioridad se ejecute. Se mejora la capacidad de respuesta y se reduce la latencia. Estas características analizadas (soporte SMP y preempt) son dos características pueden afectar la compatibilidad a la hora de ejecutar un módulo.
+
+Con el comando **“insmode”** lo agregamos al kernel. Si intentamos agregarlo de nuevo, la terminal nos indica que ya existe el archivo y mediante **“rmmod”** puede eliminarse del kernel.
+
+![alt text](<img/Gen kernel 4.png>)
+
+Por último podemos verificar la correcta instalación mediante:
+
+```sh
+lsmod | grep Módulo
+```
+
+![alt text](<img/Gen kernel 5.png>)
+
+## El sistema de ficheros /proc
+
+En Linux, hay un mecanismo adicional para que el kernel y los módulos del kernel envíen información a los procesos: el sistema de archivos /proc el cual fue originalmente diseñado para permitir un fácil acceso a la información sobre los procesos (De allí su nombre).
