@@ -31,7 +31,7 @@ def searchDate():
     def viewInd(year):
     #label2.configure(text= retornoIndice(entry1.get(), '2019'))
     #label3= customtkinter.CTkLabel(master= frame, text= retornoIndice(entry1.get(),  '2020'))
-        label3= customtkinter.CTkLabel(master= frame, text= retornoIndice(entry1.get(),  "'" + year + "'"))
+        label3= customtkinter.CTkLabel(master= frame, text= retornoIndice(entry1.get(),  "'2020'"))
         label3.pack(pady= 0, padx= 10)
         return
     return
