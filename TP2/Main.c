@@ -7,10 +7,10 @@ int cFloatToInt(float gini){
 };
 
 
-# Cargo la biblioteca compartida
+// Cargo la biblioteca compartida
 lib = ctypes.CDLL('./main.so')
  
-# Defino el tipo de argumento y el tipo de retorno de la función
+// Defino el tipo de argumento y el tipo de retorno de la función
 lib.cFloatToInt.argtypes = [ctypes.c_float]
 lib.cFloatToInt.restype = ctypes.c_int
 value_to_convert = lib.cFloatToInt(ctypes.c_float(gini))
