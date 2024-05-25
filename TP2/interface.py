@@ -3,8 +3,11 @@ import tkinter
 # Add another python code (in order to functions)
 from Main import *
 
-def mostrarGINI():
-    cantri= entry1.get()
+country= ""
+year= ""
+
+def mostrarAnios():
+    country= entry1.get()
     window.destroy()
     window1= tk.CTk()
     tk.set_appearance_mode("dark")
@@ -21,20 +24,45 @@ def mostrarGINI():
     label2.pack(pady= 12, padx= 10)
 
     # Print year list.
-    label2= tk.CTkLabel(master= frame2, text= getDatos(cantri))
+    label2= tk.CTkLabel(master= frame2, text= getDatos(country))
     label2.pack(pady= 0, padx= 10)
 
     #getDatos(entry1.get())
 
     # Add entry "Country"
     entry2= tk.CTkEntry(master= frame2, placeholder_text= "Año")
-    entry2.pack(pady= 0, padx= 10)
+    entry2.pack(pady= 10, padx= 10)
+
+    def mostrarGINI():
+
+        year= entry2.get()
+
+        window1.destroy()
+        window2= tk.CTk()
+        tk.set_appearance_mode("dark")
+        tk.set_default_color_theme("dark-blue")
+        window2.geometry('800x600')
+        window2.title('Indice de GINI')
+
+        # Craft background frame 
+        frame3= tk.CTkFrame(master= window2)
+        frame3.pack(pady=20, padx=60, fill= "both", expand= True)
+
+        # Print message 1 
+        label3= tk.CTkLabel(master= frame3, text= getGINI(country, year))
+        label3.pack(pady= 12, padx= 10)
+
+        return
 
     # Add button to get into a country.
-    button1= tk.CTkButton(master= frame2, text= "Buscar", command= mostrarGINI)
-    button1.pack(pady= 12, padx=10)
+    button2= tk.CTkButton(master= frame2, text= "Buscar", command= mostrarGINI)
+    button2.pack(pady= 0, padx=10)
+
+
 
     return
+
+
 
 # Open first window
 window= tk.CTk()
@@ -60,7 +88,7 @@ entry1= tk.CTkEntry(master= frame1, placeholder_text= "País")
 entry1.pack(pady= 0, padx= 10)
 
 # Add button to get into a country.
-button1= tk.CTkButton(master= frame1, text= "Buscar", command= mostrarGINI)
+button1= tk.CTkButton(master= frame1, text= "Buscar", command= mostrarAnios)
 button1.pack(pady= 12, padx=10)
 
 # Run
