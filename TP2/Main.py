@@ -28,25 +28,27 @@ def getDatos(selected_country):
         
             print(f'Datos para {selected_country}:')
             print("Años disponibles:")
-            for year in gini_data.keys():  # Modificado para imprimir solo los años con datos disponibles
-                print(year)
-            #i=0
-            # Solicitar al usuario que ingrese el año que desea consultar
-            selected_year = input("Ingrese el año que desea consultar: ")  # Modificado para mantener la entrada como una cadena
-            if selected_year in gini_data.keys():
-                # Guardar el índice GINI correspondiente al año seleccionado en la variable gini
-                gini = gini_data[selected_year]
-                #listYear.extend({gini_data[selected_year]})
-                #i+=1
-                #print(listYear)
-                print(f'Índice GINI para {selected_year}: {gini}')
-                return f'Índice GINI para {selected_year}: {gini}'
-            else:
-                print("Año no disponible para el país seleccionado.")
-        else:
-            print(f'Error al obtener los datos para {selected_country}:', response.status_code)
-    else:
-        print("Código de país no válido.")
+    return list(gini_data.keys())
+
+    #         for year in gini_data.keys():  # Modificado para imprimir solo los años con datos disponibles
+    #             print(year)
+    #         #i=0
+    #         # Solicitar al usuario que ingrese el año que desea consultar
+    #         selected_year = input("Ingrese el año que desea consultar: ")  # Modificado para mantener la entrada como una cadena
+    #         if selected_year in gini_data.keys():
+    #             # Guardar el índice GINI correspondiente al año seleccionado en la variable gini
+    #             gini = gini_data[selected_year]
+    #             #listYear.extend({gini_data[selected_year]})
+    #             #i+=1
+    #             #print(listYear)
+    #             print(f'Índice GINI para {selected_year}: {gini}')
+    #             return f'Índice GINI para {selected_year}: {gini}'
+    #         else:
+    #             print("Año no disponible para el país seleccionado.")
+    #     else:
+    #         print(f'Error al obtener los datos para {selected_country}:', response.status_code)
+    # else:
+    #     print("Código de país no válido.")
 
 
 # #Cargo la biblioteca compartida (Programa en lenguaje C)

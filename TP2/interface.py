@@ -4,7 +4,36 @@ import tkinter
 from Main import *
 
 def mostrarGINI():
+    cantri= entry1.get()
     window.destroy()
+    window1= tk.CTk()
+    tk.set_appearance_mode("dark")
+    tk.set_default_color_theme("dark-blue")
+    window1.geometry('800x600')
+    window1.title('Indice de GINI')
+
+    # Craft background frame 
+    frame2= tk.CTkFrame(master= window1)
+    frame2.pack(pady=20, padx=60, fill= "both", expand= True)
+
+    # Print message 1 
+    label2= tk.CTkLabel(master= frame2, text="Ingrese un año de la siguiente lista: ")
+    label2.pack(pady= 12, padx= 10)
+
+    # Print year list.
+    label2= tk.CTkLabel(master= frame2, text= getDatos(cantri))
+    label2.pack(pady= 0, padx= 10)
+
+    #getDatos(entry1.get())
+
+    # Add entry "Country"
+    entry2= tk.CTkEntry(master= frame2, placeholder_text= "Año")
+    entry2.pack(pady= 0, padx= 10)
+
+    # Add button to get into a country.
+    button1= tk.CTkButton(master= frame2, text= "Buscar", command= mostrarGINI)
+    button1.pack(pady= 12, padx=10)
+
     return
 
 # Open first window
