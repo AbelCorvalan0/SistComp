@@ -1,5 +1,5 @@
 #include <stdio.h>
-#include "sum_GINI.c"
+#include "sum_GINI"
 
 int main() {
     float number;
