@@ -64,6 +64,50 @@ Se colocan breaks para analizar el comportamiento de los registros en la línea 
 
 <!-- PONER IMÁGENES DE LOS CÓDIGOS CORRESPONDIENTES -->
 
+```c
+1  #include <stdio.h>
+2  #include "sum_GINI.c"
+3
+4   int main() {
+5     float number;
+6     int result;
+7
+8     printf("Ingrese un número (formato float): ");
+9     scanf("%f", &number);
+10
+11    result= agrego1(number);     //Breakpoint
+12
+13    printf("Result: %d\n", result);
+14
+15    return 0;
+16 }
+```
 
-Se obtiene lo siguiente:
+```c
+1 extern int asm_operation(float);
+2
+3 int agrego1(float n){
+4    int res= asm_operation(n);    //Breakpoint
+5    return res;
+6 }
+```
 
+Al iniciar el debugueo se pide un valor para convertir a tipo float.
+
+<center>
+    <img src="img/Debugueo 1.png">
+</center>
+
+Se ingresa el valor "2" para que procese el programa.
+
+<center>
+    <img src="img/Debugueo 2.png">
+</center>
+
+Se inspecciona el valor de los registros `esp` y `ebp` antes de ejecutar el siguiente paso en el debugueo. Esto es para verificar que el `esp` modifique su valor y al terminar el llamado a la función del código assembler `operation.asm` coincidan los valores el registro `esp` y el `ebp`.
+
+<center>
+    <img src="img/Registros 1.png">
+</center>
+
+Luego se muestra
