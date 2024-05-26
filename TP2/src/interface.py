@@ -58,8 +58,6 @@ def mostrarAnios():
     button2= tk.CTkButton(master= frame2, text= "Buscar", command= mostrarGINI)
     button2.pack(pady= 0, padx=10)
 
-
-
     return
 
 
