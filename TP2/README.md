@@ -8,6 +8,8 @@ El lenguaje **ensamblador** es un lenguaje propio de la arquitectura y un intent
 Los lenguajes de alto nivel, para controlar el hardware y su interacción con los sistemas físicos que lo rodean, necesitan acceder al hardware a través de los lenguajes de bajo nivel. Para ello utilizan convenciones de llamadas.
 Entender cómo funciona una convención de llamada nos acercará a un conocimiento de sumo interés para áreas de desarrollo de sistemas críticos, seguridad y también para profundizar sobre el conocimiento de la interacción entre software y hardware.
 
+Una API de REST (Represntational State Transfer) es un tipo de API que se basa en principio y restricciones arquitectónicas específicas diseñadas para sistemas distribuidos como la web. EST es un estilo de arquitectura que define un conjunto de restricciones y propiedades basadas en el protocolo HTTP. Las API RESTful son conocidas por su simplicidad y escalabilidad.
+
 ## Objetivo
 
 Se debe diseñar e implementar calculos en ensamblador. La capa superior recuperará información de una API REST. Los datos de consulta realizados deben ser entregados a un programa en C que convocará rutinas en ensamblador para que hagan los cálculos de conversión y devuelvan los resultados a las capas superiores. Luego el programa en Python mostrará los cálculos obtenidos.
@@ -16,3 +18,8 @@ Se debe utilizar el stack para convocar, enviar parámetros y devolver resultado
 
 ## Desarrollo
 
+Se debe instalar el conjunto de herramientas necesarias para compilar software desde el código fuente (compilador GCC, make, entre otras).
+
+```sh
+
+```
