@@ -26,11 +26,28 @@ sudo apt install build-essential nasm gcc-multilib g++-multilib
 
 ### Interfaz de usuario
 
-Se realiza un interfaz de usuario la cual muestra los países los cuales se tiene su respectivo Índice de GINI. Para ejecutar la misma se debe ejecutar el archivo `indexGINI.sh` desde el terminal con el siguiente comando:
+Se realiza un interfaz de usuario la cual muestra los países de los cuales se tiene su respectivo Índice de GINI para un determinado año. 
+
+Para ejecutar la misma se debe ejecutar el archivo `indexGINI.sh` desde el terminal con el siguiente comando:
 
 ```sh
 ./indexGINI.sh
 ```
+Se abrirá la interfaz gráfica, que en primer instancia solicitará el país del cuál se desea obtener la información.
+<center>
+    <img src="img/Interfaz 1.png">
+</center>
+
+
+
+<center>
+    <img src= "img/Interfaz 2.png">
+</center>
+
+
+<center>
+    <img src= "img/Interfaz 3.png">
+</center>
 
 
 ### Compilación del programa con GDB (GNU Debugger)

@@ -55,7 +55,7 @@ def getGINI(selected_country, selected_year):
         #i+=1
         #print(listYear)
         #print(f'Índice GINI para {selected_year}: {gini}')
-        return f'Índice GINI para {selected_year}: {gini}'
+        return f'Índice GINI para {selected_country} en el año {selected_year}: {gini}'
     else:
         print(f'Error al obtener los datos para {selected_country}:', resp)
 

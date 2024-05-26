@@ -12,7 +12,7 @@ def mostrarAnios():
     window1= tk.CTk()
     tk.set_appearance_mode("dark")
     tk.set_default_color_theme("dark-blue")
-    window1.geometry('800x600')
+    window1.geometry('600x400')
     window1.title('Indice de GINI')
 
     # Craft background frame 
@@ -41,7 +41,7 @@ def mostrarAnios():
         window2= tk.CTk()
         tk.set_appearance_mode("dark")
         tk.set_default_color_theme("dark-blue")
-        window2.geometry('800x600')
+        window2.geometry('600x400')
         window2.title('Indice de GINI')
 
         # Craft background frame 
@@ -66,7 +66,7 @@ def mostrarAnios():
 window= tk.CTk()
 tk.set_appearance_mode("dark")
 tk.set_default_color_theme("dark-blue")
-window.geometry('800x600')
+window.geometry('600x400')
 window.title('Indice de GINI')
 
 # Craft background frame 
