@@ -60,6 +60,10 @@ Se debe ejecutar el archivo *compiler.sh* desde el terminal con el siguiente com
 
 Se abrirá la herramienta de depuración GDB (GNU Debugger) para ejecutar el archivo *result* en forma controlada, e identificar como varían los valores de los registros de la computadora.
 
-Se colocan breaks para analizar el comportamiento de los registros.
+Se colocan breaks para analizar el comportamiento de los registros en la línea 11 del archivo `main.c` y línea 4 `sum_GINI.c`. 
 
+<!-- PONER IMÁGENES DE LOS CÓDIGOS CORRESPONDIENTES -->
+
+
+Se obtiene lo siguiente:
 
