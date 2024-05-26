@@ -18,8 +18,27 @@ Se debe utilizar el stack para convocar, enviar parámetros y devolver resultado
 
 ## Desarrollo
 
-Se debe instalar el conjunto de herramientas necesarias para compilar software desde el código fuente (compilador GCC, make, entre otras).
+Se debe instalar, por medio de una termianl, el conjunto de herramientas necesarias para compilar software desde el código fuente (compilador GCC, make, entre otras).
 
 ```sh
-
+sudo apt install build-essential nasm gcc-multilib g++-multilib
 ```
+
+### Interfaz de usuario
+
+
+
+
+### Compilación del programa con GDB (GNU Debugger)
+
+Se debe ejecutar el archivo *compiler.sh* desde el terminal con el siguiente comando.
+
+```sh
+./compiler.sh
+```
+
+Se abrirá la herramienta de depuración GDB (GNU Debugger) para ejecutar el archivo *result* en forma controlada, e identificar como varían los valores de los registros de la computadora.
+
+Se colocan breaks para analizar el comportamiento de los registros.
+
+
