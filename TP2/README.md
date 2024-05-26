@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 # TP2 - Stack Frame
 
 # Introducción
@@ -13,6 +14,8 @@ Las características y componentes de una API Rest son las siguientes:
 
 1. Cliente/Servidor: 
 =======
+=======
+>>>>>>> v1
 # TP #2 Stack Frame - Sistemas de Computación
 
 ## Introducción
@@ -57,4 +60,7 @@ Se abrirá la herramienta de depuración GDB (GNU Debugger) para ejecutar el arc
 Se colocan breaks para analizar el comportamiento de los registros.
 
 
+<<<<<<< HEAD
+>>>>>>> v1
+=======
 >>>>>>> v1
