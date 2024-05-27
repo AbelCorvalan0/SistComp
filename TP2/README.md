@@ -177,9 +177,13 @@ La instrucción `ret` retorna de la función, usando la dirección de retorno al
     <img src="img/gdb 12.png">
 </center>
 
+
+
 <center>
     <img src="img/gdb 13.png">
 </center>
+
+Se retorna al código `sum_GINI.c`, se almacena el valor retornado por la función `asm_operation(n)` en la variable `res` del tipo de dato **int**.
 
 <center>
     <img src="img/gdb 14.png">
