@@ -92,22 +92,32 @@ Se colocan breaks para analizar el comportamiento de los registros en la línea 
 6 }
 ```
 
-Al iniciar el debugueo se pide un valor para convertir a tipo float.
+Se inicia el debugeo desde el programa `main.c`. Se requiere ingresar un valor para sumar 1 y convertir a tipo de dato numérico **int**, por lo que se coloca un valor "2" de prueba. El debugger se detiene en la línea 11 donde se llama al método `agrego1(number)` del programa `sum_GINI.c`
 
 <center>
     <img src="img/gdb 1.png">
 </center>
 
-Se ingresa el valor "2" para que procese el programa.
+Dentro del programa `sum_GINI.c` se hace otro llamado al método `asm_operation(n)` que pertenece al código `operation.asm` en lenguaje *assembler*.
 
 <center>
     <img src="img/gdb 2.png">
 </center>
 
-Se inspecciona el valor de los registros `esp` y `ebp` antes de ejecutar el siguiente paso en el debugueo. Esto es para verificar que el `esp` modifique su valor y al terminar el llamado a la función del código assembler `operation.asm` coincidan los valores el registro `esp` y el `ebp`.
+Se inspecciona el valor de los registros `esp` y `ebp` antes de ejecutar el siguiente paso en el debugueo. Esto es para analizar como el `esp` modifica su valor y al terminar el llamado a la función del código assembler `operation.asm` verificar que coincidan los valores el registro `esp` y el `ebp`. 
+
+Se ingresa al Stack correspondiente al llamado de `asm_operation(n)`.
 
 <center>
     <img src="img/gdb 3.png">
+</center>
+
+El Stack Pointer `esp` comienza con un valor de `0xffffcf1c`. Luego de ejecutar la instrucción **push** el valor en su registro debe decrementarse 4 (`esp-4`).
+
+En la siguiente figura se verifica el nuevo valor del Stack Pointer `esp` es  `0xffffcf1c-0x00000004= 0xffffcf18`.
+
+<center>
+    <img src="img/gdb 4.png">
 </center>
 
 <!--- Moviemientos en el Stack
@@ -132,5 +142,3 @@ El ESP al restar -4 por cada paso, se va apilando los datos hacia arriba.
 
 
  --->
-
-Luego se muestra como varía el `esp` (Stack Pointer)
