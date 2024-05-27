@@ -1,5 +1,10 @@
 # TP #2 Stack Frame - Sistemas de Computación
 
+## Integrantes
+
+Corvalán, Abel Nicolás - 41.220.050
+Soria, Federico Isaia - 
+
 ## Introducción
 
 Los sistemas compuestos por hardware y software utilizan arquitecturas de capas para desarrollar aplicaciones complejas. En las capas superiores se trabaja con lenguajes de alto nivel. En la capa inferior, siempre está el hardware puro y duro. Inmediatamente encima está la capa de lenguaje de bajo nivel, podríamos decir más amigable con el hardware.
@@ -141,33 +146,61 @@ La instrucción `mov eax, [num]` mueve el valor del parámetro `num` al registro
     <img src="img/gdb 7.png">
 </center>
 
-Se ejecuta la instrucción `add eax, 1`, la cual incrementa el valor en `eax` en 1.
+Se ejecuta la instrucción `add eax, 1`, la cual incrementa el valor en `eax` en 1. Se puede ver su valor en la sección *Registers* de la imagen.
 
 <center>
     <img src="img/gdb 8.png">
 </center>
 
-La instrucción `mov [num], eax` almacena el valor incrementado de eax en la variable num. Se puede ver su valor en la sección *Registers* de la imagen.
+La instrucción `mov [num], eax` almacena el valor incrementado de eax en la variable num.
 
 <center>
     <img src="img/gdb 9.png">
 </center>
 
+La isntrucción `mov esp, ebp` restaura el valor original de `esp` desde `ebp`, limpiando el marco de pila actual. Unicamente incrementa el valor del registro `eip` al valor `0x565561d5`.
 
 <center>
     <img src="img/gdb 10.png">
 </center>
 
+La instrucción `pop ebp` restaura el valor original de ebp desde la pila. Esta instrucción incrementa el valor de `esp+8= 0xffffcf1c` y 
 
-mov esp, ebp:
+<center>
+    <img src="img/gdb 11.png">
+</center>
 
-Restaura el valor original de esp desde ebp, limpiando el marco de pila actual.
-pop ebp:
+La instrucción `ret` retorna de la función, usando la dirección de retorno almacenada en la pila. El `ebp` vuelve al valor que tenía antes del llamado a la función del programa `operation.asm`. Este valor es `0xffffcf48`
 
-Restaura el valor original de ebp desde la pila.
-ret:
 
-Retorna de la función, usando la dirección de retorno almacenada en la pila.
+<center>
+    <img src="img/gdb 12.png">
+</center>
+
+<center>
+    <img src="img/gdb 13.png">
+</center>
+
+<center>
+    <img src="img/gdb 14.png">
+</center>
+
+<center>
+    <img src="img/gdb 15.png">
+</center>
+
+<center>
+    <img src="img/gdb 16.png">
+</center>
+
+<center>
+    <img src="img/gdb 17.png">
+</center>
+
+<center>
+    <img src="img/gdb 18.png">
+</center>
+
 
 <!--- Moviemientos en el Stack
 
