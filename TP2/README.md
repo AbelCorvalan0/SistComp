@@ -95,19 +95,42 @@ Se colocan breaks para analizar el comportamiento de los registros en la línea 
 Al iniciar el debugueo se pide un valor para convertir a tipo float.
 
 <center>
-    <img src="img/Debugueo 1.png">
+    <img src="img/gdb 1.png">
 </center>
 
 Se ingresa el valor "2" para que procese el programa.
 
 <center>
-    <img src="img/Debugueo 2.png">
+    <img src="img/gdb 2.png">
 </center>
 
 Se inspecciona el valor de los registros `esp` y `ebp` antes de ejecutar el siguiente paso en el debugueo. Esto es para verificar que el `esp` modifique su valor y al terminar el llamado a la función del código assembler `operation.asm` coincidan los valores el registro `esp` y el `ebp`.
 
 <center>
-    <img src="img/Registros 1.png">
+    <img src="img/gdb 3.png">
 </center>
 
-Luego se muestra
+<!--- Moviemientos en el Stack
+
+El EIP (Instruction poninter siempre apunta a la siguiente línea de código (1020 para a 1022 y así).
+
+Cuando se hace un llamado a una función el ESP (Stack Pointer) decrementa su valor por ejemplo de 0019 a 0015 (-4)
+
+El ESP apunta en la memoria que tiene valores de la siguiente forma.
+
+0000
+0004
+0008
+000C
+0011
+0015    1026 (Acá se almacena la dirección de la siguiente línea luego del retorno del la función llamada)
+0019    406F
+001D    102C
+
+
+El ESP al restar -4 por cada paso, se va apilando los datos hacia arriba.
+
+
+ --->
+
+Luego se muestra como varía el `esp` (Stack Pointer)
