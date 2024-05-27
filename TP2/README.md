@@ -120,6 +120,55 @@ En la siguiente figura se verifica el nuevo valor del Stack Pointer `esp` es  `0
     <img src="img/gdb 4.png">
 </center>
 
+Se destaca que por cada paso a una siguiente línea de instrucción el registro `eip` aumentará 1 en su valor. Cabe destacar que el `ebp` (Stack Base Pointer) es un registro de referencia que se tiene dentro del Stack. Se ejecuta la línea `mov ebp, esp`. Esta instrucción copia el valor de registro `esp` en `ebp` para crear un nuevo marco de pila para la función.
+
+La instrucción `fld dword [esp+8]` carga el valor de coma flotante de 32 bits que se encuentra en la dirección `[esp+8]` en la pila de coma flotante (FPU stack).
+
+
+<center>
+    <img src="img/gdb 5.png">
+</center>
+
+La instrucción `fistp dword[num]` almacena el valor entero redondeado de la cima de la pila de la FPU en la variable num y luego elimina ese valor de la pila de la FPU. el Stack pointer no cambia su valor.
+
+<center>
+    <img src="img/gdb 6.png">
+</center>
+
+La instrucción `mov eax, [num]` mueve el valor del parámetro `num` al registro `eax`.
+
+<center>
+    <img src="img/gdb 7.png">
+</center>
+
+Se ejecuta la instrucción `add eax, 1`, la cual incrementa el valor en `eax` en 1.
+
+<center>
+    <img src="img/gdb 8.png">
+</center>
+
+La instrucción `mov [num], eax` almacena el valor incrementado de eax en la variable num. Se puede ver su valor en la sección *Registers* de la imagen.
+
+<center>
+    <img src="img/gdb 9.png">
+</center>
+
+
+<center>
+    <img src="img/gdb 10.png">
+</center>
+
+
+mov esp, ebp:
+
+Restaura el valor original de esp desde ebp, limpiando el marco de pila actual.
+pop ebp:
+
+Restaura el valor original de ebp desde la pila.
+ret:
+
+Retorna de la función, usando la dirección de retorno almacenada en la pila.
+
 <!--- Moviemientos en el Stack
 
 El EIP (Instruction poninter siempre apunta a la siguiente línea de código (1020 para a 1022 y así).
