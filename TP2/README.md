@@ -177,33 +177,28 @@ La instrucción `ret` retorna de la función, usando la dirección de retorno al
     <img src="img/gdb 12.png">
 </center>
 
-
+Se retorna al código `sum_GINI.c`, se almacena el valor retornado por la función `asm_operation(n)` en la variable `res` del tipo de dato **int**.
 
 <center>
     <img src="img/gdb 13.png">
 </center>
 
-Se retorna al código `sum_GINI.c`, se almacena el valor retornado por la función `asm_operation(n)` en la variable `res` del tipo de dato **int**.
+En la siguiente figura se muestra la ejecución de la instrucción de retorno de la función `agrego1`. Luego de ser totalmente ejecutada y terminar el programa nuestro `esp` debe volver a cambiar su valor, ya que se realizó dos llamados a función. Esto fué de `main.c` a `sum_GINI.c`, y de este último a `operation.asm`.
 
-<center>
-    <img src="img/gdb 14.png">
-</center>
-
-<center>
-    <img src="img/gdb 15.png">
-</center>
+Se vuelve al valor de registro `esp= 0xffffcf20` al retornar al programa `main.c`.
 
 <center>
     <img src="img/gdb 16.png">
 </center>
 
+Al terminar el programa principal `main.c` se borra el valor almacenado en el registro `eax= 0x00000003`.
+
+Se muestra en la sección de variables los valores con los cuales termina el programa `number= 2` y `result= 3`.
+
 <center>
     <img src="img/gdb 17.png">
 </center>
 
-<center>
-    <img src="img/gdb 18.png">
-</center>
 
 
 <!--- Moviemientos en el Stack
