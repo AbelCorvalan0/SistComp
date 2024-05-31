@@ -1,22 +1,4 @@
-<<<<<<< HEAD
-<<<<<<< HEAD
-# TP2 - Stack Frame
-
-# Introducción
-
-# Desarrollo
-
-Se realiza una aplicación para obtener información del índice de GINI para diferentes paises. La información se obtiene por el consumo de una API.
-
-Una API Rest (Representational State Transfer) es un estilo arquitectónico para diseñar servicios web que permite la interacción entre sistemas utilizando el protocolo HTTP. 
-
-Las características y componentes de una API Rest son las siguientes:
-
-1. Cliente/Servidor: 
-=======
-=======
->>>>>>> v1
-# TP #2 Stack Frame - Sistemas de Computación
+ # TP #2 Stack Frame - Sistemas de Computación
 
 ## Integrantes
 
@@ -57,6 +39,7 @@ Para ejecutar la misma se debe ejecutar el archivo `indexGINI.sh` desde el termi
 ./indexGINI.sh
 ```
 Se abrirá la interfaz gráfica, que en primer instancia solicitará el país del cuál se desea obtener la información.
+
 <center>
     <img src="img/Interfaz 1.png">
 </center>
@@ -147,13 +130,6 @@ Se destaca que por cada paso a una siguiente línea de instrucción el registro 
 
 La instrucción `fld dword [esp+8]` carga el valor de coma flotante de 32 bits que se encuentra en la dirección `[esp+8]` en la pila de coma flotante (FPU stack).
 
-
-<<<<<<< HEAD
-<<<<<<< HEAD
->>>>>>> v1
-=======
->>>>>>> v1
-=======
 <center>
     <img src="img/gdb 5.png">
 </center>
@@ -247,4 +223,4 @@ El ESP al restar -4 por cada paso, se va apilando los datos hacia arriba.
 
 
  --->
->>>>>>> v1
+
