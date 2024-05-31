@@ -18,6 +18,11 @@ Las características y componentes de una API Rest son las siguientes:
 >>>>>>> v1
 # TP #2 Stack Frame - Sistemas de Computación
 
+## Integrantes
+
+Corvalán, Abel Nicolás - 41.220.050
+Soria, Federico Isaia - 
+
 ## Introducción
 
 Los sistemas compuestos por hardware y software utilizan arquitecturas de capas para desarrollar aplicaciones complejas. En las capas superiores se trabaja con lenguajes de alto nivel. En la capa inferior, siempre está el hardware puro y duro. Inmediatamente encima está la capa de lenguaje de bajo nivel, podríamos decir más amigable con el hardware.
@@ -44,7 +49,28 @@ sudo apt install build-essential nasm gcc-multilib g++-multilib
 
 ### Interfaz de usuario
 
+Se realiza un interfaz de usuario la cual muestra los países de los cuales se tiene su respectivo Índice de GINI para un determinado año. 
 
+Para ejecutar la misma se debe ejecutar el archivo `indexGINI.sh` desde el terminal con el siguiente comando:
+
+```sh
+./indexGINI.sh
+```
+Se abrirá la interfaz gráfica, que en primer instancia solicitará el país del cuál se desea obtener la información.
+<center>
+    <img src="img/Interfaz 1.png">
+</center>
+
+
+
+<center>
+    <img src= "img/Interfaz 2.png">
+</center>
+
+
+<center>
+    <img src= "img/Interfaz 3.png">
+</center>
 
 
 ### Compilación del programa con GDB (GNU Debugger)
@@ -57,10 +83,168 @@ Se debe ejecutar el archivo *compiler.sh* desde el terminal con el siguiente com
 
 Se abrirá la herramienta de depuración GDB (GNU Debugger) para ejecutar el archivo *result* en forma controlada, e identificar como varían los valores de los registros de la computadora.
 
-Se colocan breaks para analizar el comportamiento de los registros.
+Se colocan breaks para analizar el comportamiento de los registros en la línea 11 del archivo `main.c` y línea 4 `sum_GINI.c`. 
+
+<!-- PONER IMÁGENES DE LOS CÓDIGOS CORRESPONDIENTES -->
+
+```c
+1  #include <stdio.h>
+2  #include "sum_GINI.c"
+3
+4   int main() {
+5     float number;
+6     int result;
+7
+8     printf("Ingrese un número (formato float): ");
+9     scanf("%f", &number);
+10
+11    result= agrego1(number);     //Breakpoint
+12
+13    printf("Result: %d\n", result);
+14
+15    return 0;
+16 }
+```
+
+```c
+1 extern int asm_operation(float);
+2
+3 int agrego1(float n){
+4    int res= asm_operation(n);    //Breakpoint
+5    return res;
+6 }
+```
+
+Se inicia el debugeo desde el programa `main.c`. Se requiere ingresar un valor para sumar 1 y convertir a tipo de dato numérico **int**, por lo que se coloca un valor "2" de prueba. El debugger se detiene en la línea 11 donde se llama al método `agrego1(number)` del programa `sum_GINI.c`
+
+<center>
+    <img src="img/gdb 1.png">
+</center>
+
+Dentro del programa `sum_GINI.c` se hace otro llamado al método `asm_operation(n)` que pertenece al código `operation.asm` en lenguaje *assembler*.
+
+<center>
+    <img src="img/gdb 2.png">
+</center>
+
+Se inspecciona el valor de los registros `esp` y `ebp` antes de ejecutar el siguiente paso en el debugueo. Esto es para analizar como el `esp` modifica su valor y al terminar el llamado a la función del código assembler `operation.asm` verificar que coincidan los valores el registro `esp` y el `ebp`. 
+
+Se ingresa al Stack correspondiente al llamado de `asm_operation(n)`.
+
+<center>
+    <img src="img/gdb 3.png">
+</center>
+
+El Stack Pointer `esp` comienza con un valor de `0xffffcf1c`. Luego de ejecutar la instrucción **push** el valor en su registro debe decrementarse 4 (`esp-4`).
+
+En la siguiente figura se verifica el nuevo valor del Stack Pointer `esp` es  `0xffffcf1c-0x00000004= 0xffffcf18`.
+
+<center>
+    <img src="img/gdb 4.png">
+</center>
+
+Se destaca que por cada paso a una siguiente línea de instrucción el registro `eip` aumentará 1 en su valor. Cabe destacar que el `ebp` (Stack Base Pointer) es un registro de referencia que se tiene dentro del Stack. Se ejecuta la línea `mov ebp, esp`. Esta instrucción copia el valor de registro `esp` en `ebp` para crear un nuevo marco de pila para la función.
+
+La instrucción `fld dword [esp+8]` carga el valor de coma flotante de 32 bits que se encuentra en la dirección `[esp+8]` en la pila de coma flotante (FPU stack).
 
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> v1
 =======
+>>>>>>> v1
+=======
+<center>
+    <img src="img/gdb 5.png">
+</center>
+
+La instrucción `fistp dword[num]` almacena el valor entero redondeado de la cima de la pila de la FPU en la variable num y luego elimina ese valor de la pila de la FPU. el Stack pointer no cambia su valor.
+
+<center>
+    <img src="img/gdb 6.png">
+</center>
+
+La instrucción `mov eax, [num]` mueve el valor del parámetro `num` al registro `eax`.
+
+<center>
+    <img src="img/gdb 7.png">
+</center>
+
+Se ejecuta la instrucción `add eax, 1`, la cual incrementa el valor en `eax` en 1. Se puede ver su valor en la sección *Registers* de la imagen.
+
+<center>
+    <img src="img/gdb 8.png">
+</center>
+
+La instrucción `mov [num], eax` almacena el valor incrementado de eax en la variable num.
+
+<center>
+    <img src="img/gdb 9.png">
+</center>
+
+La isntrucción `mov esp, ebp` restaura el valor original de `esp` desde `ebp`, limpiando el marco de pila actual. Unicamente incrementa el valor del registro `eip` al valor `0x565561d5`.
+
+<center>
+    <img src="img/gdb 10.png">
+</center>
+
+La instrucción `pop ebp` restaura el valor original de ebp desde la pila. Esta instrucción incrementa el valor de `esp+8= 0xffffcf1c` y 
+
+<center>
+    <img src="img/gdb 11.png">
+</center>
+
+La instrucción `ret` retorna de la función, usando la dirección de retorno almacenada en la pila. El `ebp` vuelve al valor que tenía antes del llamado a la función del programa `operation.asm`. Este valor es `0xffffcf48`
+
+
+<center>
+    <img src="img/gdb 12.png">
+</center>
+
+Se retorna al código `sum_GINI.c`, se almacena el valor retornado por la función `asm_operation(n)` en la variable `res` del tipo de dato **int**.
+
+<center>
+    <img src="img/gdb 13.png">
+</center>
+
+En la siguiente figura se muestra la ejecución de la instrucción de retorno de la función `agrego1`. Luego de ser totalmente ejecutada y terminar el programa nuestro `esp` debe volver a cambiar su valor, ya que se realizó dos llamados a función. Esto fué de `main.c` a `sum_GINI.c`, y de este último a `operation.asm`.
+
+Se vuelve al valor de registro `esp= 0xffffcf20` al retornar al programa `main.c`.
+
+<center>
+    <img src="img/gdb 16.png">
+</center>
+
+Al terminar el programa principal `main.c` se borra el valor almacenado en el registro `eax= 0x00000003`.
+
+Se muestra en la sección de variables los valores con los cuales termina el programa `number= 2` y `result= 3`.
+
+<center>
+    <img src="img/gdb 17.png">
+</center>
+
+
+
+<!--- Moviemientos en el Stack
+
+El EIP (Instruction poninter siempre apunta a la siguiente línea de código (1020 para a 1022 y así).
+
+Cuando se hace un llamado a una función el ESP (Stack Pointer) decrementa su valor por ejemplo de 0019 a 0015 (-4)
+
+El ESP apunta en la memoria que tiene valores de la siguiente forma.
+
+0000
+0004
+0008
+000C
+0011
+0015    1026 (Acá se almacena la dirección de la siguiente línea luego del retorno del la función llamada)
+0019    406F
+001D    102C
+
+
+El ESP al restar -4 por cada paso, se va apilando los datos hacia arriba.
+
+
+ --->
 >>>>>>> v1
