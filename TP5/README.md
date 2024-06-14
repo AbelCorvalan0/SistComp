@@ -10,6 +10,14 @@ Este archivo se encuentra en edición. Se adjunta la información en el siguient
 
 ## Introducción
 
+## Teoría
+
+Se trata de un software que permite al sistema operativo interactuar con un periférico, creando una abstracción del hardware y proporcionando una interfaz -posiblemente estandarizada- para utilizarlo. Se puede graficar como un manual de instrucciones que indica cómo controlar y comunicarse con un dispositivo en particular. 
+
+Los CDD (Character Device Drivers, o Controladores de Dispositivos de Carácter) son un tipo de controlador de dispositivo en el sistema operativo Linux que manejan dispositivos que transmiten datos de manera secuencial, es decir, carácter por carácter.
+A diferencia de los controladores de bloques, que manejan dispositivos que acceden a los datos en bloques (como discos duros), los CDD leen y escriben datos carácter por carácter.
+Estos drivers interactúan directamente con el kernel de Linux y pueden responder a interrupciones de hardware, administrar buffers de entrada y salida, y proporcionar interfaces de ioctl (entrada/salida controlada) para operaciones específicas del dispositivo.
+
 ## Primeras tareas
 
 Para simular la interfaz GPIO (General-Purpose Input/Output) en Raspberry Pi basado en qemu.
