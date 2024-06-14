@@ -1,4 +1,4 @@
-Este archivo se encuentra en edición. Se adjunta la información en el siguiente link: [TP#4 - Módulos de Kernel]()
+Este archivo se encuentra en edición. Se adjunta la información de las  primeras actividades (implementación de Driver1, Driver2, Driver3, Driver4) en el siguiente link: [TP#5 - Drivers](https://github.com/AbelCorvalan0/SistComp/blob/master/TP5/TP%20%235%20-%20Drivers.pdf)
 
 
 # TP #5 Drivers - Sistemas de Computación
