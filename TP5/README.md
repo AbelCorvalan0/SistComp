@@ -39,3 +39,18 @@ Se ejecuta el programa de python `./qemu-rpi-gpio` para cargar el socket unix en
 Se ejecuta el script `./run.sh` que iniciará el raspberry pi virtual en conjunto con la aplicación de gpio.
 
 ![alt text](img/run.png)
+
+Al ejecutar el archivo `./run.sh` se obtuvo el siguiente error para los dos integrantes del grupo.
+
+![alt text](<img/error run 1.png>)
+
+![alt text](<img/error run 2.png>)
+
+Este error indica que QEMU requiere un tamaño de imagen sea una potencia de 2 (por ejemplo 1GiB, 2Gib, etc.)
+
+Se resuelve con el siguiente comando en el terminal. 
+
+```sh
+qemu-img resize -f raw /home/abel/rootfs.orig/rootfs/kernel8.img 1G
+```
+
