@@ -86,3 +86,8 @@ Con la interfaz de GPIO Virtual se realiza la prueba del pin 4.
 Se pide un valor del pin 4, se obtiene false. Luego se setea al mismo pin un valor de 1, se pide su valor y se obtiene True.
 
 ![alt text](<img/gpio set get.png>)
+
+Se verifican las modificaciones en el estado del GPIO modificado (pin 4) de la Raspberry Pi emulada.
+
+![alt text](img/cat.png)
+
