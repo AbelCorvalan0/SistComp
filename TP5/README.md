@@ -91,3 +91,4 @@ Se verifican las modificaciones en el estado del GPIO modificado (pin 4) de la R
 
 ![alt text](img/cat.png)
 
+Desde el terminal de qemu se puede escribir y leer valores de los pines del dispositivo emulado.
