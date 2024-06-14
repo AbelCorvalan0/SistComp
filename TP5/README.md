@@ -65,7 +65,10 @@ Luego se verifica la existencia del mismo.
 
 ![alt text](<img/verificacion socket.png>)
 
-Se exportan los pines de gpio, en esta figura se muestra el caso para el pin 4.
+Se exportan los pines de gpio.
 
 ![alt text](<img/gpio export.png>)
+
+
+
 
