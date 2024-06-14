@@ -69,6 +69,8 @@ Se exportan los pines de gpio.
 
 ![alt text](<img/gpio export.png>)
 
+Con la interfaz de GPIO Virtual se realiza la prueba del pin 4.
 
+Se pide un valor del pin 4, se obtiene false. Luego se setea al mismo pin un valor de 1, se pide su valor y se obtiene True.
 
-
+![alt text](<img/gpio set get.png>)
