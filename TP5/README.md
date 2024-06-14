@@ -34,7 +34,7 @@ Se ejecuta el siguiente script `./setup.sh` de shell que descarga una imagen de 
 
 Se ejecuta el programa de python `./qemu-rpi-gpio` para cargar el socket unix en qemu.
 
-
+![alt text](<img/qemu gpio.png>)
 
 Se ejecuta el script `./run.sh` que iniciará el raspberry pi virtual en conjunto con la aplicación de gpio.
 
@@ -51,6 +51,21 @@ Este error indica que QEMU requiere un tamaño de imagen sea una potencia de 2 (
 Se resuelve con el siguiente comando en el terminal. 
 
 ```sh
-qemu-img resize -f raw /home/abel/rootfs.orig/rootfs/kernel8.img 1G
+qemu-img resize -f raw /home/abel/rootfs.orig/rootfs/kernel8.img 3G
 ```
+Luego se obtuvo el siguiente error en la instalación del archivo `tmp-gpio.sock`.
+
+Se crea el socket por medio de `socat`.
+
+```sh
+socat -d -d -lf /tmp/tmp-gpio.sock
+```
+
+Luego se verifica la existencia del mismo.
+
+![alt text](<img/verificacion socket.png>)
+
+Se exportan los pines de gpio, en esta figura se muestra el caso para el pin 4.
+
+![alt text](<img/gpio export.png>)
 
