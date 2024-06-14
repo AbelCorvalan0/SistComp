@@ -20,9 +20,13 @@ Estos drivers interactúan directamente con el kernel de Linux y pueden responde
 
 ## Primeras tareas
 
-Para simular la interfaz GPIO (General-Purpose Input/Output) en Raspberry Pi basado en qemu.
+Para simular la interfaz GPIO (General-Purpose Input/Output) en Raspberry Pi basado en qemu, el programa `qemu-rpi-gpio` interactúa con qemu implementando el protocolo `qtest`.
 
-El programa `qemu-rpi-gpio` interactúa con qemu implementando el protocolo `qtest`.
+Como primer actividad del trabajo práctico se necesita compilar un fork de Qemu con soporte de interrupciones GPIO. Para esto realizamos un fork del QEMU proporcionado por la cátedra. Se utilizó el comando build para crear el directorio y compilarlo.
+
+![image](https://github.com/AbelCorvalan0/SistComp/assets/116111472/0b6bc8d3-c2fc-4136-ba4c-f2f0df490431)
+
+![image](https://github.com/AbelCorvalan0/SistComp/assets/116111472/f7af58b2-42c1-4a47-9531-b7db68709777)
 
 Se instalan las librerías `socat`, `python3` y `pexpect`.
 
