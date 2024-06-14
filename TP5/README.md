@@ -92,3 +92,9 @@ Se verifican las modificaciones en el estado del GPIO modificado (pin 4) de la R
 ![alt text](img/cat.png)
 
 Desde el terminal de qemu se puede escribir y leer valores de los pines del dispositivo emulado.
+
+Se carga el módulo `gpio_module.c` ubicado en el directorio `/TP5/qemu-gpio/source/`.
+
+![alt text](<img/modulo cargado.png>)
+
+
