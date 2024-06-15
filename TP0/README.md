@@ -271,7 +271,7 @@ Crear una nueva rama `bibliografia` y mostrar las ramas del repositorio.
 
 ![alt text](<img/Ramas/ejercicio 5b.png>)
 
-### Repositorios remotos
+<!-- ### Repositorios remotos
 
 - Ejercicio 1
 
@@ -303,4 +303,4 @@ Crear una nueva rama `bibliografia` y mostrar las ramas del repositorio.
     5. Añadir los cambios a la zona de intercambio temporal.
     6. Hacer un commit con el mensaje “Añadido nuevo autor.”
     7. Subir los cambios de la rama autoria al repositorio remoto en GitHub.
-    8. Hacer un Pull Request de los cambios en la rama autoria.
+    8. Hacer un Pull Request de los cambios en la rama autoria. -->
