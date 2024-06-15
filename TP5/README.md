@@ -97,4 +97,25 @@ Se carga el módulo `gpio_module.c` ubicado en el directorio `/TP5/qemu-gpio/sou
 
 ![alt text](<img/modulo cargado.png>)
 
+Se realiza el seteo de valores en los pines configurados.
 
+![alt text](<img/gpio set 10.png>)
+
+En la simulación de la Raspberry Pi se obtiene el valor del pin 1.
+
+![alt text](<img/sensor 1.png>)
+
+Se modifica el valor del pin mediante el GPIO manager.
+
+```
+(gpio)> set 1 1
+b'OK\r\n'
+```
+
+Se obtiene el nuevo valor del pin 1.
+
+![alt text](<img/sensor 1 cc.png>)
+
+Se modifica al pin 2 para leer su valor.
+
+![alt text](<img/sensor 2.png>)
