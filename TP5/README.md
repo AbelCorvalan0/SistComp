@@ -6,7 +6,7 @@ Este archivo se encuentra en edición. Se adjunta la información de las  primer
 ## Integrantes
 
 - Corvalán, Abel Nicolás - Ing. Electrónica
-- Soria, Isaia - Ing. en Computación
+- Soria, Federico - Ing. en Computación
 
 ## Introducción
 
