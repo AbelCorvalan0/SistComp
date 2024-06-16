@@ -244,7 +244,45 @@ Por último, se escribe en el archivo del device driver mediante echo y se verif
 
 ![alt text](<img/Pruebas drivers/drv4/drv4 6.png>)
 
+### Clipboard.ko
 
+Este módulo de kernel, a diferencia del `drv4`, está diseñado para proporcionar una funcionalidad de portapapeles accesible a través del sistema de archivos `/proc`. Este portapapeles permite a las aplicaciones de espacio de usuario leer y escribir datos en un buffer asignado dinámicamente en el espacio de kernel como se comprobará más adelante.
+Cuando se carga el módulo, se reserva un espacio en memoria para el buffer del portapapeles utilizando `vmalloc` y se inicializa a ceros. Además, se crea una entrada en `/proc` llamada `clipboard` con permisos de lectura y escritura `(0666)`. Las operaciones de lectura y escritura están definidas en las funciones `clipboard_read` y `clipboard_write`.
+
+![alt text](<img/Pruebas drivers/clip/clip 1.png>)
+
+`struct proc_dir_entry *proc_create (const char *name, umode_t mode, struct
+proc_dir_entry *parent, const struct file_operations *proc_fops)`
+
+Tiene el propósito de crear una entrada en el directorio proc . Recibe los parámetros:
+
+- `name`: Nombre para la nueva entrada en `/proc`. `Clipboard` en nuestro caso.
+
+- `mode`: Permisos de acceso. `0666` en nuestro caso. Lo que se traduce en permisos de lectura y escritura para usuario, grupo y otros.
+
+- `parent`: Nombre del directorio padre de la nueva entrada dentro de `/proc`.
+
+- `proc_fops`: Estructura que contiene punteros a función que se implementan en el `driver`. Es el reemplazo de la estructura deprecada para versiones más viejas del kernel 
+
+- `file_operations`: En nuestro caso definimos `clipboard_read` y `clipboard_wr`.
+
+![alt text](<img/Pruebas drivers/clip/clip 2.png>)
+
+Se compila y se carga el módulo, esto se verifica mediante sudo `dmesg`.
+
+![alt text](<img/Pruebas drivers/clip/clip 3.png>)
+
+![alt text](<img/Pruebas drivers/clip/clip 4.png>)
+
+Se transfiere información desde el espacio de usuario al espacio del kernel creando una entrada en `/proc/clipboard` con `echo “mensaje” > /proc/clipboard`.  Mediante `cat` se puede recuperar ese mensaje.
+
+![alt text](<img/Pruebas drivers/clip/clip 5.png>)
+
+Cuando el módulo se descarga, se libera el espacio en memoria reservado para el buffer y se elimina la entrada en `/proc`.
+
+![alt text](<img/Pruebas drivers/clip/clip 6.png>)
+
+## Implementación en Raspberry Pi emulado en Qemu
 
 ## Primeras tareas
 
