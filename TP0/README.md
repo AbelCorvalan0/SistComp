@@ -273,7 +273,7 @@ Crear una nueva rama `bibliografia` y mostrar las ramas del repositorio.
 
 ![alt text](<img/Ramas/ejercicio 5b.png>)
 
-<!-- ### Repositorios remotos
+### Repositorios remotos
 
 - Ejercicio 1
 
@@ -281,11 +281,14 @@ Crear una nueva rama `bibliografia` y mostrar las ramas del repositorio.
     2. Añadirlo al repositorio local del libro.
     3. Mostrar todos los repositorios remotos configurados.
 
+![alt text](<img/Repositorios remotos/ejercicio 1.png>)
+
 - Ejercicio 2
 
     1. Añadir los cambios del repositorio local al repositorio remoto de GitHub.
     2. Acceder a GitHub y comprobar que se han subido los cambios mostrando el historial de versiones.
 
+![alt text](<img/Repositorios remotos/ejercicio 2.png>)
 
 - Ejercicio 3
 
@@ -296,6 +299,10 @@ Crear una nueva rama `bibliografia` y mostrar las ramas del repositorio.
     5. Hacer un commit con el mensaje “Añadido autor.”
     6. Subir los cambios al repositorio remoto.
 
+![alt text](<img/Repositorios remotos/ejercicio 3.png>)
+
+![alt text](<img/Repositorios remotos/ejercicio 3a.png>)
+
 - Ejercicio 4
 
     1. Hacer una bifurcación del repositorio remoto asalber/libro-git en GitHub.
@@ -305,4 +312,6 @@ Crear una nueva rama `bibliografia` y mostrar las ramas del repositorio.
     5. Añadir los cambios a la zona de intercambio temporal.
     6. Hacer un commit con el mensaje “Añadido nuevo autor.”
     7. Subir los cambios de la rama autoria al repositorio remoto en GitHub.
-    8. Hacer un Pull Request de los cambios en la rama autoria. -->
+    8. Hacer un Pull Request de los cambios en la rama autoria.
+
+![alt text](<img/Repositorios remotos/ejercicio 4.png>)    
