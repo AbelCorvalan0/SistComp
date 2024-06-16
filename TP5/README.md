@@ -189,6 +189,49 @@ Quitando el módulo con `sudo rmmod drv3.ko` , vemos que se imprime el mensaje d
 
 ![alt text](<img/Pruebas drivers/drv3/drv3 10.png>)
 
+### Drv4.c
+
+Se define una variable global char c que se utiliza para almacenar un único carácter, esto no está presente en drv3. A diferencia de drv3, en este caso si se realizan operaciones de escritura y lectura, mediante las funciones `my_read` que lee el valor del carácter y lo copia al espacio de usuario utilizando copy_to_user. Si la lectura es exitosa, devuelve 1 y actualiza el offset; de lo contrario, devuelve un error. 
+Por otro lado, la función `my_write` toma el último byte del buffer del usuario y lo almacena en c utilizando copy_from_user. Si la escritura es exitosa, devuelve la longitud del búfer; de lo contrario, devuelve un error.
+
+Algunas de funciones que se ejecutan dentro de la inicialización del módulo son:
+
+`int alloc_chrdev_region(dev_t * dev, unsigned baseminor, unsigned count, const char * name);`
+
+Esta se encarga de registrar un rango de números (menores) para dispositivos de caracteres. Parámetros que la función requiere:
+
+- `dev`: Guarda el número major en la variable first de la cual se pasa su dirección de memoria para ser seteada dentro del cuerpo de la función.
+
+- `baseminor`: Guarda el primero del rango de valores menores. En nuestro caso 0.
+
+- `count`: La cantidad de números menores requeridas. Para nuestro caso solo 1.
+
+- `name`: Nombre del device driver. En nuestro caso `SdeC_drv4`.
+
+`struct class* class_create (struct module* owner, const char* name);`
+
+Crea una estructura que sirve de argumento para otra función llamada `device_create()`. Recibe como argumentos:
+
+- `owner`: Un puntero al módulo que posee esta estructura. En este caso es el mismo módulo que estamos trabajando.
+
+- `name`: Un nombre representativo para el nombre de esta estructura.
+
+`int cdev_add (struct cdev* p, dev_t dev, unsigned count);`
+
+Agrega un dispositivo de caracteres al sistema. Recibe como parámetros:
+
+- `p`: Estructura retornada por el llamado a la función cdev_init .
+
+- `dev`: Número de device obtenido de alloc_chrdev_region.
+
+- `count`: Cantidad de números menores para este dispositivo. En nuestro caso es solo uno.
+
+Compilamos con make como en los casos anteriores y con `modinfo` verificamos su información general.
+
+
+
+
+
 ## Primeras tareas
 
 Para simular la interfaz GPIO (General-Purpose Input/Output) en Raspberry Pi basado en qemu, el programa `qemu-rpi-gpio` interactúa con qemu implementando el protocolo `qtest`.
