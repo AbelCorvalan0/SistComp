@@ -228,7 +228,21 @@ Agrega un dispositivo de caracteres al sistema. Recibe como parámetros:
 
 Compilamos con make como en los casos anteriores y con `modinfo` verificamos su información general.
 
+![alt text](<img/Pruebas drivers/drv4/drv4 1.png>)
 
+![alt text](<img/Pruebas drivers/drv4/drv4 2.png>)
+
+Se agrega el módulo al kernel y se verifica su instalación
+
+![alt text](<img/Pruebas drivers/drv4/drv4 3.png>)
+
+![alt text](<img/Pruebas drivers/drv4/drv4 4.png>)
+
+Por último, se escribe en el archivo del device driver mediante echo y se verifica con cat.
+
+![alt text](<img/Pruebas drivers/drv4/drv4 5.png>)
+
+![alt text](<img/Pruebas drivers/drv4/drv4 6.png>)
 
 
 
