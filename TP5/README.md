@@ -47,7 +47,44 @@ Un `device driver` tiene dos partes:
     1- Una específica del dispositivo 
     2- Otra específica del sistema operativo. 
 
+![alt text](<img/Driver y bus horizontal.png>)
 
+## Pruebas de drivers
+
+Se clona el repositorio `device-drivers`.
+
+```sh
+git clone https://gitlab.com/sistemas-de-computacion-unc/device-drivers.git
+```
+
+
+### Drv1.c
+
+Como vimos en el trabajo práctico anterior, cualquier driver de Linux consta de un constructor y un destructor. 
+Se llama al constructor de un módulo cada vez que insmod logra cargar el módulo en el núcleo y al destructor del módulo cada vez que rmmod logra descargar el módulo del núcleo. 
+Estas funciones se implementan con las macros `module_init()` y `module_exit()` incluidas en el encabezado de `module.h`.
+
+Primero buscamos los drivers en el primer enlace proporcionado y para comenzar se trabajará con el `drv1.c`, éste es un módulo simple ya que sólo imprime un mensaje al registro del kernel al ser cargado y otro mensaje al ser descargado sin otra operación adicional.
+
+![alt text](<img/Pruebas drivers/drv1/drv1 1.png>)
+
+Se procede a compilar con `make all` y se verifica la información del  módulo mediante `modinfo`,de este modo se pueden ver atributos como la descripción, el autor o la versión.
+
+![alt text](<img/Pruebas drivers/drv1/drv1 2.png>)
+
+Se inserta el módulo en el kernel mediante `sudo insmod`, con `dmeg` se verifica su correcta instalación y la impresión del mensaje. 
+
+![alt text](<img/Pruebas drivers/drv1/drv1 3.png>)
+
+![alt text](<img/Pruebas drivers/drv1/drv1 4.png>)
+
+![alt text](<img/Pruebas drivers/drv1/drv1 5.png>)
+
+Como sucede con cualquier módulo, se remueve luego con `rmmod` por lo que se imprime el mensaje de la función `printk` del destructor `drv1_exit()`.
+
+![alt text](<img/Pruebas drivers/drv1/drv1 6.png>)
+
+### Drv2.c
 
 ## Primeras tareas
 
