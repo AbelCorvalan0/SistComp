@@ -4,7 +4,9 @@
 
 Link del repositorio [libro-git](https://github.com/AbelCorvalan0/libro-git)
 
-### Creación y actualizacipon de repositorios
+### Uso de Git
+
+#### Creación y actualizacipon de repositorios
 
 - Ejercicio 1
 
@@ -59,7 +61,7 @@ Realizar un commit de los últimos cambios con el mensaje “Añadido índice de
 
 ![alt text](<img/Creación y actualización de repositorios/ejercicio 6.png>)
 
-### Historial de cambios
+#### Historial de cambios
 
 - Ejercicio 1
 
@@ -119,7 +121,7 @@ Realizar un commit de los últimos cambios con el mensaje “Añadido índice de
 
 ![alt text](<img/Historial de cambios/ejercicio 4.png>)
 
-### Deshacer cambios
+#### Deshacer cambios
 
 - Ejercicio 1
 
@@ -186,7 +188,7 @@ Realizar un commit de los últimos cambios con el mensaje “Añadido índice de
 
 ![alt text](<img/Deshacer cambios/ejercicio 4f.png>)
 
-### Ramas
+#### Ramas
 
 - Ejercicio 1
 
@@ -273,7 +275,7 @@ Crear una nueva rama `bibliografia` y mostrar las ramas del repositorio.
 
 ![alt text](<img/Ramas/ejercicio 5b.png>)
 
-### Repositorios remotos
+#### Repositorios remotos
 
 - Ejercicio 1
 
@@ -314,4 +316,6 @@ Crear una nueva rama `bibliografia` y mostrar las ramas del repositorio.
     7. Subir los cambios de la rama autoria al repositorio remoto en GitHub.
     8. Hacer un Pull Request de los cambios en la rama autoria.
 
-![alt text](<img/Repositorios remotos/ejercicio 4.png>)    
+![alt text](<img/Repositorios remotos/ejercicio 4.png>)
+
+
