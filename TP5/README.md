@@ -6,17 +6,48 @@ Este archivo se encuentra en edición. Se adjunta la información de las  primer
 ## Integrantes
 
 - Corvalán, Abel Nicolás - Ing. Electrónica
-- Soria, Isaia - Ing. en Computación
+- Soria, Federico - Ing. en Computación
 
 ## Introducción
 
-## Teoría
+Un `driver` es aquel que conduce, administra, controla, dirige, monitorea la entidad bajo su mando. Un `bus driver` hace eso con un "bus". De manera similar, un `device driver` hace lo mismo con un dispositivo. Un dispositivo puede ser cualquier periférico conectado a una computadora, por ejemplo, un mouse, un teclado, una pantalla/monitor, un disco duro, una cámara, un reloj, etc.
+
+Un `driver` puede ser una persona o sistemas automáticos, posiblemente monitoreados por otra persona. Del mismo modo, el `device driver` podría ser una pieza de software u otro periférico/dispositivo, posiblemente controlado por un software. Sin embargo, si se trata de otro periférico/dispositivo, se denomina `device controller` en el lenguaje común. Por `driver` solo nos referimos a un `software driver`. Un `device controller` es un dispositivo en sí mismo y, por lo tanto, muchas veces también necesita un `driver`.
+
+Los ejemplos generales de `device controller` incluyen controladores de disco duro, controladores de pantalla, controladores de audio para los dispositivos correspondientes. Ejemplos más técnicos serían los controladores para los protocolos de hardware, como un controlador IDE, un controlador PCI, un controlador USB, un controlador SPI, un controlador I2C, etc. 
+
+## Marco teórico
+
+
+### Driver: 
 
 Se trata de un software que permite al sistema operativo interactuar con un periférico, creando una abstracción del hardware y proporcionando una interfaz -posiblemente estandarizada- para utilizarlo. Se puede graficar como un manual de instrucciones que indica cómo controlar y comunicarse con un dispositivo en particular. 
 
-Los CDD (Character Device Drivers, o Controladores de Dispositivos de Carácter) son un tipo de controlador de dispositivo en el sistema operativo Linux que manejan dispositivos que transmiten datos de manera secuencial, es decir, carácter por carácter.
-A diferencia de los controladores de bloques, que manejan dispositivos que acceden a los datos en bloques (como discos duros), los CDD leen y escriben datos carácter por carácter.
-Estos drivers interactúan directamente con el kernel de Linux y pueden responder a interrupciones de hardware, administrar buffers de entrada y salida, y proporcionar interfaces de ioctl (entrada/salida controlada) para operaciones específicas del dispositivo.
+### CDD (Character Device Drivers) y CDF (Common Driver Framework):
+
+Son un tipo de controlador de dispositivo en el sistema operativo Linux que manejan dispositivos que transmiten datos de manera secuencial, es decir, carácter por carácter.
+A diferencia de los controladores de bloques, que manejan dispositivos que acceden a los datos en bloques (como discos duros). Los CDD leen y escriben datos carácter por carácter.
+
+Estos drivers interactúan directamente con el kernel de Linux y pueden responder a interrupciones de hardware, administrar buffers de entrada y salida, y proporcionar interfaces de `ioctl` (entrada/salida controlada) para operaciones específicas del dispositivo.
+
+### Drivers y buses:
+
+En la siguiente figura se muestra la interacción de los drivers y buses:
+
+![alt text](<img/Drivers y bus.png>)
+
+Los `bus driver` proporcionan una interfaz específica de hardware para los correspondientes protocolos de hardware y son las capas de software (horizontales) más bajas de un sistema operativo. 
+
+Sobre ellos se encuentran los `device driver`, que operan sobre los dispositivos subyacentes utilizando las interfaces de capa horizontal y, por lo tanto, son específicos del dispositivo.
+
+La idea de escribir estos `drivers` es proporcionar una abstracción del hardware para las aplicaciones de usuario a través del sistema operativo. Ofrecer una interfaz común para el usuario que será específica para cada sistema operativo. 
+
+Un `device driver` tiene dos partes: 
+
+    1- Una específica del dispositivo 
+    2- Otra específica del sistema operativo. 
+
+
 
 ## Primeras tareas
 
