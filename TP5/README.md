@@ -171,6 +171,24 @@ Hasta ahora todo se comporta como los drivers anteriores pero tiene una gran dif
 
 - `write = my_write`: Esta función se llama cuando un proceso intenta escribir en el archivo de dispositivo. Es responsable de transferir datos desde el espacio de usuario al kernel. En el código, imprime un mensaje indicando que se ha realizado una operación de escritura y devuelve el número de bytes escritos (que es len, el tamaño de los datos proporcionados por el usuario). 
 
+En las carpeta `/sys/class/chardrv/SdeC_drv3` el kernel coloca información del CDD y se tiene una carpeta `/sys/devices/virtual/chardrv/` donde están los dispositivos relacionados.
+
+![alt text](<img/Pruebas drivers/drv3/drv3 6.png>)
+
+El character device driver creado `SdeC_drv3` se encuentra en la carpeta `dev`.
+
+![alt text](<img/Pruebas drivers/drv3/drv3 7.png>)
+
+Con sudo cat /dev/SdeC_drv3 intentamos abrir el archivo, y con dmesg vemos que se cargaron las operaciones open(), read() y close():
+
+![alt text](<img/Pruebas drivers/drv3/drv3 8.png>)
+
+![alt text](<img/Pruebas drivers/drv3/drv3 9.png>)
+
+Quitando el módulo con `sudo rmmod drv3.ko` , vemos que se imprime el mensaje del destructor:
+
+![alt text](<img/Pruebas drivers/drv3/drv3 10.png>)
+
 ## Primeras tareas
 
 Para simular la interfaz GPIO (General-Purpose Input/Output) en Raspberry Pi basado en qemu, el programa `qemu-rpi-gpio` interactúa con qemu implementando el protocolo `qtest`.
