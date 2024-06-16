@@ -2,6 +2,8 @@
 
 ## Desarrollo
 
+Link del repositorio [libro-git](https://github.com/AbelCorvalan0/libro-git)
+
 ### Creación y actualizacipon de repositorios
 
 - Ejercicio 1

@@ -14,10 +14,6 @@
 // Pines entrada GPIO
 #define GPIO_IN_1 1
 #define GPIO_IN_2 2
-#define GPIO_IN_3 3
-#define GPIO_IN_4 4
-#define GPIO_IN_5 5
-#define GPIO_IN_6 6
 
 static struct proc_dir_entry *proc_entry;
 // Variable usada en operaciones read y write.
@@ -75,13 +71,13 @@ static ssize_t shared_file_read(struct file *filp, char __user *buf, size_t len,
     }
 
     if (strncmp(shared_file, "1", 1) == 0) {
-        result = gpio_get_value(GPIO_IN_1)+gpio_get_value(GPIO_IN_2)*2+gpio_get_value(GPIO_IN_3)*3;
-        printk(KERN_INFO "pines 1, 2 y 3. Resultado: %d\n", result);
+        result = gpio_get_value(GPIO_IN_1);
+        printk(KERN_INFO "pin 1, Resultado: %d\n", result);
 	memset(shared_file, 0, BUFFER_LENGTH);
     	snprintf(shared_file, BUFFER_LENGTH, "Sensor 1: %d", result);
     } else if (strncmp(shared_file, "2", 1) == 0) {
-        result = gpio_get_value(GPIO_IN_4)*4+gpio_get_value(GPIO_IN_5)*5+gpio_get_value(GPIO_IN_6)*6;
-        printk(KERN_INFO "pines 4, 5 y 6. Resultado: %d\n", result);
+        result = gpio_get_value(GPIO_IN_2);
+        printk(KERN_INFO "pin 2. Resultado: %d\n", result);
 	memset(shared_file, 0, BUFFER_LENGTH);
     	snprintf(shared_file, BUFFER_LENGTH, "Sensor 2: %d", result);
     } else {
@@ -155,10 +151,6 @@ int init_GPIO_module( void )
     // Inicializamos los pines a usar
     gpio_initializer(GPIO_IN_1, "GPIO_IN_1");
     gpio_initializer(GPIO_IN_2, "GPIO_IN_2");
-    gpio_initializer(GPIO_IN_3, "GPIO_IN_3");
-    gpio_initializer(GPIO_IN_4, "GPIO_IN_4");
-    gpio_initializer(GPIO_IN_5, "GPIO_IN_5");
-    gpio_initializer(GPIO_IN_6, "GPIO_IN_6");
     return ret;
 }
 
