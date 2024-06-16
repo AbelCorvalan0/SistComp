@@ -318,4 +318,77 @@ Crear una nueva rama `bibliografia` y mostrar las ramas del repositorio.
 
 ![alt text](<img/Repositorios remotos/ejercicio 4.png>)
 
+### Herramientas de consolas
+
+Se revisan las siguientes habilidades básicas de Linux:
+
+- Navegación por comandos. 
+- Administración de archivos.
+- Expresiones regulares y la administración del sistema. 
+
+#### Parte 1: Exploración de sintaxis de comandos.
+
+Se implementan los comandos `ls`, `pwd`, `cd` y `sudo` para revisar la navegación básica de sintaxis de comandos.
+
+- Paso 1: Abrir una terminal.
+
+Se abre un terminal con el shortcut `Ctrl + Alt + T`.
+
+- Paso 2: Navegar por los directorios.
+
+    a. Utilizar el comando ls para mostrar el directorio actual. Estos comandos distinguen entre mayúsculas y
+    minúsculas.
+    
+    ![alt text](<img/Herramientas de consolas/2a.png>)
+    
+    b. Utilice el comando ls con el argumento "nombre de un archivo" para mostrar el contenido de la carpeta.
+
+    ![alt text](<img/Herramientas de consolas/2b.png>)
+    
+    c. Utilice el comando ls con la opción -l para mostrar una "visualización larga" del contenido del directorio
+    actual.
+    
+    ![alt text](<img/Herramientas de consolas/2c.png>)
+
+    d. Utilice el comando ls con la opción -r para mostrar el contenido del directorio actual en orden alfabético
+    inverso.
+
+    ![alt text](<img/Herramientas de consolas/2d.png>)
+
+    e. Se pueden utilizar varias opciones al mismo tiempo. Utilice el comando ls con las opciones -l y -r para
+    mostrar el contenido del directorio actual tanto en orden largo como inverso.
+
+    ![alt text](<img/Herramientas de consolas/2e.png>)
+    
+    f. Hay muchas más opciones que se pueden usar con el comando ls. Utilice el comando man con el argumento ls para ver todas las posibilidades en el manual. El comando man se puede usar para buscar cualquier comando dentro del sistema. Utilice la barra espaciadora para avanzar a pantallas posteriores. Presione q para salir.
+
+    ![alt text](<img/Herramientas de consolas/2f.png>)
+
+    g. También puede usar el argumento —help después de la mayoría de los comandos para ver un resumen más corto de todas las opciones de comando disponibles.
+
+    ![alt text](<img/Herramientas de consolas/2g.png>)
+
+    h. Use el comando pwd para desplegar el directorio actual con el que se está trabajando.
+
+    ![alt text](<img/Herramientas de consolas/2h.png>)
+
+    i. Utilice el comando cd para cambiar el directorio a /home/abel/documents.
+
+    ![alt text](<img/Herramientas de consolas/2i.png>)
+
+    j. Utilice el comando cd con el símbolo / para cambiar los directorios al directorio raíz. Utilice pwd de nuevo
+    para ver que ahora está en el directorio raíz.
+
+    ![alt text](<img/Herramientas de consolas/2j.png>)
+
+    k. Vuelva al directorio /home/abel/documents. Consejo: Puede mover un directorio a la vez o todo el camino a un destino. Para ingresar rápidamente el comando, escriba las primeras letras del nombre del directorio y presione Tab para que el sistema introduzca automáticamente el resto del nombre. Recuerde que los nombres distinguen entre letras mayúsculas y minúsculas.
+
+    ![alt text](<img/Herramientas de consolas/2k.png>)
+
+    l. Use los caracteres .. para subir un solo directorio. Utilice pwd de nuevo para ver que está de vuelta en el
+    directorio de inicio del usuario.
+
+    ![alt text](<img/Herramientas de consolas/2l.png>)
+
+#### Parte 2: Navegar por los directorios
 
