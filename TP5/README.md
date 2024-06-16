@@ -143,6 +143,34 @@ Pero sin embargo, si se intenta abrir uno de estos archivos aparece un mensaje d
 
 ![alt text](<img/Pruebas drivers/drv2/drv2 11.png>)
 
+### Drv3.c
+
+Compilamos sin problemas el driver 3, se obtiene su información y se agrega al kernel.
+
+![alt text](<img/Pruebas drivers/drv3/drv3 1.png>)
+
+![alt text](<img/Pruebas drivers/drv3/drv3 2.png>)
+
+![alt text](<img/Pruebas drivers/drv3/drv3 3.png>)
+
+Se verifica su correcto agregado por el mensaje en su `module_init()`.
+
+![alt text](<img/Pruebas drivers/drv3/drv3 4.png>)
+
+Hasta ahora todo se comporta como los drivers anteriores pero tiene una gran diferencia y es que este código define operaciones básicas de dispositivo como abrir, cerrar, leer y escribir, imprimiendo mensajes en el registro del kernel cuando se realizan estas operaciones. Todas estas definidas dentro de `file_operations` como se muestra a continuación y en el constructor drv3_init se crea el puntero a un objeto de la clase device particular mediante: `cl = class_create(THIS_MODULE, “chardrv”)`.
+
+![alt text](<img/Pruebas drivers/drv3/drv3 5.png>)
+
+- `.owner= THIS_MODULE`: Es un puntero al módulo del kernel que contiene estas operaciones. Mantiene una referencia al módulo para evitar que se descargue mientras alguna de estas operaciones está en curso.
+
+- `open= my_open`: Esta función se llama cuando un proceso abre el archivo de dispositivo. En este caso, imprime un mensaje en el registro del kernel indicando que el archivo de dispositivo ha sido abierto.
+
+- `release = my_close`: Esta función se llama cuando un proceso cierra el archivo de dispositivo. Este también imprime un mensaje en el registro del kernel indicando que el archivo de dispositivo ha sido cerrado.
+
+- `read = my_read`: Esta función se llama cuando un proceso intenta leer desde el archivo de dispositivo. Es responsable de transferir datos desde el kernel al espacio de usuario. También  imprime un mensaje indicando que se ha realizado una operación de lectura. Aunque no transfiere datos ya que  la implementación real debería copiar datos desde el dispositivo al búfer del usuario.
+
+- `write = my_write`: Esta función se llama cuando un proceso intenta escribir en el archivo de dispositivo. Es responsable de transferir datos desde el espacio de usuario al kernel. En el código, imprime un mensaje indicando que se ha realizado una operación de escritura y devuelve el número de bytes escritos (que es len, el tamaño de los datos proporcionados por el usuario). 
+
 ## Primeras tareas
 
 Para simular la interfaz GPIO (General-Purpose Input/Output) en Raspberry Pi basado en qemu, el programa `qemu-rpi-gpio` interactúa con qemu implementando el protocolo `qtest`.
