@@ -284,9 +284,6 @@ Cuando el módulo se descarga, se libera el espacio en memoria reservado para el
 
 ## Implementación en Raspberry Pi emulado en Qemu
 
-Para esta etapa del trabajo práctico se necesita compilar un fork de Qemu con soporte de
-interrupciones GPIO. Para esto realizamos un fork del QEMU proporcionado por la cátedra. Se utilizó el comando build para crear el directorio y compilarlo.
-
 Para simular la interfaz GPIO (General-Purpose Input/Output) en Raspberry Pi basado en qemu, el programa `qemu-rpi-gpio` interactúa con qemu implementando el protocolo `qtest`.
 
 Como primer actividad del trabajo práctico se necesita compilar un fork de Qemu con soporte de interrupciones GPIO. Para esto realizamos un fork del QEMU proporcionado por la cátedra. Se utilizó el comando build para crear el directorio y compilarlo.
