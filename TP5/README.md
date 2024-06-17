@@ -383,3 +383,37 @@ Se obtiene el nuevo valor del pin 1.
 Se modifica al pin 2 para leer su valor.
 
 ![alt text](<img/sensor 2.png>)
+
+Para la implementación de la interfaz con python se realiza la siguiente secuencia de valores en el Virtual GPIO manager.
+
+Secuencia para el pin 1:
+
+```sh
+(gpio)> set 1 1
+b'OK\r\n'
+(gpio)> set 1 0
+b'OK\r\n'
+(gpio)> set 1 1
+b'OK\r\n'
+(gpio)> set 1 0
+b'OK\r\n'
+```
+En la interfaz se obtiene lo siguiente para el caso del `pin 1`.
+
+![alt text](<img/Pruebas drivers/test/s1.png>)
+
+Secuencia para el pin 2:
+
+```sh
+(gpio)> set 2 1
+b'OK\r\n'
+(gpio)> set 2 1
+b'OK\r\n'
+(gpio)> set 2 0
+b'OK\r\n'
+(gpio)> set 2 1
+b'OK\r\n'
+```
+Para el `pin 2` se obtiene lo siguiente:
+
+![alt text](<img/Pruebas drivers/test/s2.png>)
