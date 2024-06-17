@@ -390,5 +390,245 @@ Se abre un terminal con el shortcut `Ctrl + Alt + T`.
 
     ![alt text](<img/Herramientas de consolas/2l.png>)
 
-#### Parte 2: Navegar por los directorios
+- Parte 3: Utilizar comandos de superusuario para el acceso adminisitrativo.
 
+    a. Utilice el comando sudo para emitir un solo comando como usuario root (raíz). No se creará una nueva terminal. Utilice el comando sudo apt-get update para actualizar la lista de paquetes disponibles instalados en la máquina virtual (Virtual Machine). Este comando no funcionará si no se utiliza el comando sudo.
+
+    ![alt text](<img/Herramientas de consolas/p3 a.png>)
+
+#### Parte 2: Revisión de Administración de Archivos
+
+En esta parte, revisará los permisos de archivos, cambiará los permisos y la propiedad de archivos, moverá archivos, copiará archivos, eliminará archivos y verá archivos.
+
+- Paso 1: Revisión de permisos de archivos.
+
+    a. Utilice ls Desktop -l para mostrar el contenido de la carpeta Escritorio.
+
+    ![alt text](<img/Herramientas de consolas/Parte 2/parte 2 1.png>)
+
+
+    b. Responda a las siguientes preguntas sobre la salida anterior. Si es necesario, busque en Internet la
+    información del permiso del archivo Linux que se muestra en la salida del comando ls.
+
+    - ¿Qué representa el guion inicial en la información de  permisos?
+    Este es el campo de tipo de archivo. El guion representa un archivo normal.
+    
+    - ¿Qué habría en el lugar del guion si el elemento fuera un directorio?
+    Sería una "d" para "directorio".
+
+    - ¿Qué representan las tres letras o guiones siguientes en la información de permisos?
+    Estos representan los permisos del propietario del archivo sobre el archivo.
+
+    - ¿Qué representan las tres letras intermedias o guiones en la información de permisos?
+    Estos representan los permisos del grupo sobre el archivo.
+    
+    - ¿Qué representan las tres últimas letras o guiones en la información de permisos?
+    Estos representan los permisos que otros usuarios tienen sobre el archivo.
+
+    - ¿Qué indica la primera instancia de "devasc" en la información de permiso?
+    Esto indica el usuario propietario del campo y que es el propietario del archivo.
+
+    - ¿Qué indica la segunda instancia de "devasc" en la información de permiso?
+    Esto indica el campo propietario del grupo y es el grupo del archivo.
+
+    - ¿Qué significa un tipo de permiso de "r"?
+    Esto significa un permiso de "leer". Esto permite leer o copiar el contenido del archivo.
+
+    - ¿Qué significa un tipo de permiso de "w"?
+    Esto significa un permiso de "escribir". Esto permite modificar o sobrescribir el contenido. Permite agregar o eliminar archivos de un directorio.
+
+    - ¿Qué significa un tipo de permiso de "x"?
+    Esto significa un permiso de "ejecutar". Esto permite que un archivo se ejecute como un proceso, aunque los archivos de script también requieren permiso de lectura.
+
+- Paso 2: Cambiar los permisos y la propiedad de los archivos.
+
+    a. Utilice el comando cd para pasar a los Documentos del Directorio.
+
+    b. Utilice el comando echo para crear un archivo de script de shell, que tendrá el comando ls../Desktop dentro del archivo. Recuerde que el carácter mayor que (>) redirige la salida del comando a un archivo.
+
+    c. El script myfile.sh se almacena en el directorio /Documents. Utilice el comando cat para ver el único comando del script. Este archivo se utilizará como ejemplo para modificar los permisos y la propiedad.
+
+    d. Usa el comando. /myfile.sh para ejecutar el script. Se deniega el acceso porque debe establecer el permiso del ejecutable en el archivo.
+
+    e. Utilice el comando ls -l myfile.sh para ver los permisos de archivo actuales.
+
+    f. Utilice el comando chmod +x myfile.sh para permitir la ejecución del archivo.
+
+    g. Usa el comando. /myfile.sh para ejecutar el script.
+
+    h. Utilice el comando sudo chown root myfile.sh para cambiar la propiedad del archivo a "root".
+
+    i. Mostrar los permisos del archivo myfile.sh.
+
+    ![alt text](<img/Herramientas de consolas/Parte 2/paso 2.png>)
+
+- Paso 3: Utilice el comando para mover archivos.
+
+    a. Utilice el comando mv para mover el archivo myfile.sh al escritorio.
+
+    b. Mostrar el contenido de la carpeta Escritorio.
+
+
+    c. Devuelva el archivo a la carpeta Documentos.
+
+    d. Utilice el comando mv para cambiar el nombre de myfile.sh a myfile_renamed.sh.
+
+    ![alt text](<img/Herramientas de consolas/Parte 2/paso 3.png>)
+
+- Paso 4: Utilice el comando copy files (copiar archivos).
+    
+    a. Utilice el comando cp para hacer una copia del archivo myfile_renamed.sh.
+
+- Paso 5: Utilice el comando para remover archivos.
+
+Utilice el comando rm para quitar el archivo myfile_renamed_and_copied.sh.
+
+- Paso 6: Utilice la redirección de salida estándar.
+
+    a. Utilice la redirección (>) para colocar texto en un nuevo archivo llamado linux.txt.
+
+    b. Utilice el comando cat para redirigir el contenido de linux.txt a otro archivo.
+
+    c. Utilice el comando cat para ver el contenido de linux2.txt.
+
+    d. Utilice el comando echo para anexar texto al archivo linux2.txt .
+
+    e. Utilice el comando cat para ver el contenido del linux.txt archivo.
+
+
+    f. Utilice el comando echo para sobrescribir el contenido de un archivo utilizando el corchete de ángulo único.
+
+    g. Utilice el comando cat para ver el contenido del archivo linux.txt. Observe que el estado anterior “¡Linux es impresionante!" se sobrescribió.
+
+    ![alt text](<img/Herramientas de consolas/Parte 2/paso 6.png>)
+
+- Paso 7: Utilice el editor de texto vim.
+
+    a. Utilice el siguiente comando para iniciar el editor de texto vi y abrir un archivo de texto.
+
+    b. Utilice el editor de texto para cambiar el contenido a lo siguiente:
+
+    La tecla insert le permitirá entrar en el modo de edición, añadiendo después de la posición del cursor, mientras que la tecla i le permitirá entrar en el modo de edición, insertando en la posición del cursor.
+    Tiene que usar la tecla Esc para entrar en el modo de comando para moverse. Recuerde que d eliminará (cortará), y tirará (copiará), y p pondrá (pegará) la línea actual con el cursor.
+
+
+    c. Guarde el texto en un nuevo archivo llamado "linux3.txt". Recuerde que tiene que estar en el modo de comando y escribir dos puntos ( : ) para entrar en modo ex para que pueda escribir (guardar) el documento :w linux3.txt). A continuación, puede usar el comando quit (exit) :q )para salir del editor vi.
+
+    d. Use el comando cat para ver el contenido del archivo linux3.txt.
+
+    ![alt text](<img/Herramientas de consolas/Parte 2/paso 7 1.png>)
+
+    ![alt text](<img/Herramientas de consolas/Parte 2/paso 7 2.png>)
+
+#### Parte 3: Revisión de Expresiones Regulares
+
+En esta parte, se utiliza el comando `grep` para revisar cómo se pueden utilizar expresiones regulares para filtrar.
+
+    a. Utilice el comando grep para filtrar el contenido del archivo passwd para mostrar la línea del archivo passwd que contiene devasc. Observe que las dos instancias de devasc están resaltadas. También observe que el comando grep distingue entre mayúsculas y minúsculas. La instancia de DEVASC no está resaltada.
+
+    b. Utilice el comando grep para mostrar cuántas veces aparece root en el archivo passwd. Observe que las tres instancias root (raíz) están resaltadas.
+
+    c. Utilice el comando grep con el carácter de anclaje ^ para encontrar la palabra, pero solo al principio de la línea. Observe que sólo se resalta la palabra al principio de la línea.
+
+    d. Utilice el comando grep con el carácter de anclaje $ para encontrar una palabra al final de una línea.
+
+    e. Utilice el comando grep con el carácter de anclaje . para que coincida con palabras de longitud específica con letras diferentes en ellas. Observe que no solo se resalta daem, sino que también se resalta dnsm.
+
+    f. Utilice el comando grep para encontrar líneas donde solo estén presentes los números 8 o 9. Observe que sólo se devuelven las líneas que contienen un 8, un 9 o ambos.
+
+    g. Utilice el comando grep para buscar caracteres literales. Observe que sólo se devuelven las líneas que contienen una coma.
+
+    h. Utilice el comando grep para buscar apariciones de cero o más del patrón que lo precede. Observe que sólo se devuelven las líneas con new y ne.
+
+![alt text](<img/Herramientas de consolas/Parte 3/parte 3.png>)
+
+![alt text](<img/Herramientas de consolas/Parte 3/parte 3a.png>)
+
+#### Parte 4: revisión del Sistema de Administración.
+
+En esta parte, revise las tareas básicas de administración del sistema Linux, incluyendo el apagado del equipo, ver y probar la configuración de red, vigilar procesos, administrar paquetes de instalación, actualizar contraseñas de usuario, agregar contenido a archivos y usar editores de texto.
+
+- Paso 1: Apague la computadora.
+
+    a. Utilice el comando shutdown now para iniciar un apagado del sistema operativo (y la máquina virtual) inmediatamente. No tiene que realizar esta acción, ya que la máquina virtual se apagará y tendrá que reiniciarla manualmente. Los formatos de este argumento de tiempo pueden ser la palabra now, una hora del día en el formato hh:mm o el número de minutos a retrasar en el formato +minutes.
+
+    ```sh
+        shutdown now
+    ```
+
+    b. Utilice el comando date para comprobar la fecha establecida del sistema operativo.
+
+![alt text](<img/Herramientas de consolas/Parte 4/parte 4 1.png>)
+
+    c. Utilice el comando shutdown +1 “¡Vuelva pronto!" para apagar el sistema operativo en un minuto y mostrar el mensaje "¡Vuelva pronto!" Asegúrese de cancelar o su máquina virtual se apagará.
+
+    ```sh
+        shutdown+1 
+        shutdown -c 
+    ```
+
+- Paso 2: Ver y probar la configuración de red.
+
+    a. Utilice el comando ip address para mostrar la configuración de red. La salida es un poco más detallada. Por ejemplo, observe que se muestran cinco direcciones IPv4 para la interfaz dummy0.
+
+
+    b. Utilice el comando ping con las opciones -c 4 para hacer ping a un equipo de la red local cuatro veces. Debe utilizar una dirección IP válida de un dispositivo en su red local. En el siguiente ejemplo se utiliza 192.168.1.1, pero es probable que su red tenga direcciones IPv4 diferentes.
+
+    c. También puede hacer ping a un nombre y el Sistema de nombres de dominio (DNS) resolverá el nombre en una dirección IP. Por ejemplo, ping al sitio web de Cisco. Su máquina virtual (Virtual Machine) enviará una solicitud DNS primero para obtener la dirección IP y luego enviar los paquetes ping. El proceso DNS no se muestra en la salida ping.
+
+![alt text](<img/Herramientas de consolas/Parte 4/parte 4 2.png>)    
+
+- Paso 3: Ver procesos.
+
+    a. Utilice el comando ps para mostrar los procesos que se están ejecutando en la terminal actual.
+
+    b. Utilice el comando ps con la opción -e para mostrar todos los procesos que se ejecutan en el equipo.
+
+![alt text](<img/Herramientas de consolas/Parte 4/parte 4 3.png>)    
+
+    c. Puede canalizar cualquier salida de comando a una pantalla a la vez agregando | more. Se muestra una pantalla de salida con el —more— que se muestra en la parte inferior. Ahora puede usar la tecla Enter para mostrar una línea a la vez, la barra espaciadora para mostrar una pantalla a la vez o Ctrl+C para salir y volver al símbolo del sistema.
+
+![alt text](<img/Herramientas de consolas/Parte 4/parte 4 4.png>)   
+    
+    d. Utilice el comando ps con la opción -ef para mostrar con más detalle todos los procesos que se ejecutan en el equipo. 
+
+![alt text](<img/Herramientas de consolas/Parte 4/parte 4 5.png>)
+
+- Paso 4: Administrar paquetes.
+
+    a. Utilice el comando apt-get update para actualizar la lista de paquetes disponibles en el sistema operativo, como se muestra anteriormente en la Parte 1 de este laboratorio. Debe utilizar permisos de nivel administrativo para utilizar este comando.
+
+    b. Utilice el comando apt-cache search para encontrar un paquete específico.
+
+![alt text](<img/Herramientas de consolas/Parte 4/parte 4 6.png>)
+
+    c. Utilice el comando apt-get install para instalar un paquete.
+    
+    d. Ahora puede usar el comando speedtest-cli para probar su velocidad actual de conexión a Internet.
+
+    e. Utilice el comando apt-get upgrade para actualizar todos los paquetes y dependencias del equipo.
+
+![alt text](<img/Herramientas de consolas/Parte 4/parte 4 6.png>)
+
+    f. Utilice el comando apt-get purge para eliminar completamente un paquete del equipo.  
+
+![alt text](<img/Herramientas de consolas/Parte 4/parte 4 8.png>)
+
+- Paso 5: Actualizar Contraseñas.
+
+    a. Utilice el comando passwd para actualizar su contraseña.
+
+    b. Utilice el comando passwd con la opción -S para ver el estado de su contraseña.    
+
+    c. Utilice las páginas de manual para el comando passwd (man passwd) para investigar la opción -S y encontrar la respuesta a las siguientes preguntas.    
+
+![alt text](<img/Herramientas de consolas/Parte 4/parte 4 9.png>)
+
+    ¿Cuál es el estado actual de la contraseña?
+    P indica una contraseña utilizable.
+    
+    ¿Cuál es el número mínimo de días que deben pasar antes de que se pueda cambiar la contraseña?
+    0
+
+    ¿Cuál es el número de días después de la expiración de la contraseña que la cuenta permanece activa?
+    -1 indica que la contraseña nunca caduca debido a la inactividad.
